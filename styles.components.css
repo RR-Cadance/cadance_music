@@ -452,3 +452,81 @@
 }
 /* Tighten modal footer spacing between name and role */
 .modal blockquote footer { margin: 0; }
+
+/* Partner cards */
+.partner-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: var(--space-3);
+  box-shadow: var(--shadow-2);
+  align-items: start;
+}
+
+.partner-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow-1);
+}
+
+.partner-info h3 {
+  margin: 0 0 0.25rem;
+  color: var(--text);
+  font-size: var(--step-1);
+}
+
+.partner-role {
+  color: var(--brand);
+  font-weight: 600;
+  font-size: var(--step--1);
+  margin: 0 0 var(--space-2);
+}
+
+.partner-info p {
+  margin: 0 0 var(--space-2);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.partner-links {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.partner-links .btn {
+  font-size: var(--step--1);
+  padding: 0.5rem 0.875rem;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Mobile responsive partner cards */
+@media (max-width: 599px) {
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .partner-image {
+    justify-self: center;
+  }
+  
+  .partner-links {
+    justify-content: center;
+  }
+}
