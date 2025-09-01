@@ -104,6 +104,7 @@ function initSelectablePersonas() {
   try {
     const sections = [
       { id: 'personas', mode: 'home' },
+      { id: 'teachers', mode: 'home' },
       { id: 'who', mode: 'generic' }
     ];
 

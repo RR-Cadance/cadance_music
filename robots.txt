@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Disallow debug and development files
+Disallow: /debug/
+Disallow: /.kilocode/
+Disallow: /*.md$
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /favicon*.png
+Allow: /android-chrome*.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+# Sitemap location
+Sitemap: https://cadance.music/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
