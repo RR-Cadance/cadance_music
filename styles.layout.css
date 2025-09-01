@@ -22,6 +22,52 @@
 }
 .brand-wordmark { height: auto; width: clamp(120px, 36vw, 180px); }
 
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+/* Hamburger animation when menu is open */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Primary nav (small-screen horizontal scroll support) */
 .primary-nav {
   flex: 1;
@@ -127,23 +173,56 @@
   }
   .brand-wordmark { position: relative; top: 0; } /* remove small logo drop on mobile */
 
+  /* Show hamburger menu on mobile */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Hide navigation by default on mobile */
   .primary-nav {
-    margin-left: 0;         /* reduce whitespace after wordmark */
-    min-width: 0;           /* ensure nav can shrink within header width */
-    overflow-x: auto;       /* allow horizontal scroll for long labels */
-    overflow-y: hidden;     /* prevent vertical movement under finger */
-    overscroll-behavior-x: contain; /* avoid horizontal bounce/chain */
-    -webkit-overflow-scrolling: touch; /* enable momentum scrolling for horizontal nav */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.25);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
   }
+
+  /* Show navigation when menu is open */
+  .primary-nav.menu-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
   .primary-nav ul {
-    gap: 0.25rem; /* tighter spacing to fit within viewport */
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-2);
   }
+
+  .primary-nav li {
+    width: 100%;
+  }
+
   .primary-nav a {
-    font-size: var(--step--1);  /* slightly smaller for mobile fit */
-    padding-top: 0.25rem;       /* maintain fixed header height */
-    padding-bottom: 0.25rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+    display: block;
+    font-size: var(--step-0);
+    padding: var(--space-2);
+    border-radius: 6px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .primary-nav a:hover,
+  .primary-nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Existing mobile footer layout */

@@ -230,3 +230,72 @@ function initResourceTitles() {
 
 // Auto-init resource titles
 initResourceTitles();
+
+/**
+ * Mobile hamburger menu toggle (progressive enhancement)
+ */
+function initMobileMenu() {
+  try {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.primary-nav');
+    
+    if (!toggle || !nav) return;
+
+    function toggleMenu() {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      const newState = !isOpen;
+      
+      toggle.setAttribute('aria-expanded', String(newState));
+      nav.classList.toggle('menu-open', newState);
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = newState ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('menu-open');
+      document.body.style.overflow = '';
+    }
+
+    // Toggle menu on button click
+    toggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking nav links
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        closeMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('menu-open')) {
+        closeMenu();
+        toggle.focus(); // Return focus to toggle button
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('menu-open') &&
+          !nav.contains(e.target) &&
+          !toggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on window resize (if user rotates device or resizes window)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 599 && nav.classList.contains('menu-open')) {
+        closeMenu();
+      }
+    });
+
+  } catch (_) {
+    // Fail silently to preserve no-JS baseline
+  }
+}
+
+// Auto-init mobile menu
+initMobileMenu();
