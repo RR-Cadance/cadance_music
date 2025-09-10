@@ -5,7 +5,7 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - Teacher‑focused homepage at [index.html](index.html) - **UPDATED WITH MOBILE NAVIGATION**
 - Musicians & Album Sellers page at [publishers/index.html](publishers/index.html) - **MAJOR TRANSFORMATION + MOBILE NAV**
 - Artist Partnership page at [partnership.html](partnership.html) - **UPDATED WITH MOBILE NAV**
-- How To guides at [how-to.html](how-to.html) - **MOBILE NAV ADDED**
+- How To guides at [how-to.html](how-to.html) - **COMPLETE VIDEO DEMONSTRATIONS ADDED (2025-09-10)**
 - Music Training resources at [music-training.html](music-training.html) - **MOBILE NAV ADDED**
 - Partners showcase at [partners.html](partners.html) - **MOBILE NAV ADDED**
 - FAQ at [faq.html](faq.html) - **UPDATED + MOBILE NAV**
@@ -247,3 +247,39 @@ The tone transformation eliminates potential friction with artists who use multi
 - **Removed manipulative terms**: "convert," "turn into buyers," "conversion strategies"
 - **Added empowering alternatives**: "empower," "discover benefits," "engagement strategies," "enhanced value"
 - **Collaborative positioning**: All pages now emphasize partnership and mutual benefit rather than one-sided conversion
+
+## How To Page Video Implementation (2025-09-10)
+
+### **Complete Video Tutorial System**
+- **Seven video demonstrations**: All core Cadance features now have professional video tutorials
+- **HTML5 video implementation**: Responsive video players with controls, fallback text, and rounded corners
+- **Professional descriptions**: Each video includes clear explanations aligned with site's professional tone
+- **Optimal user flow**: Videos ordered to follow logical teaching workflow from library navigation to advanced features
+
+### **Video Content Added**
+1. **Library artist view** (`Library_Artist_View_demo.mp4`) - Browse music collection by artist for efficient organization
+2. **Playing tracks** (`Play_Track_demo.mp4`) - Navigate library and start playing tracks with one tap
+3. **Changing tempo** (`Tempo_demo.mp4`) - Adjust tempo 60-200% without pitch distortion for any dance style
+4. **Mastering repeats** (`Repeat_demo.mp4`) - Set up seamless loops for exercises and combinations
+5. **Start delays** (`Start_Delay_demo.mp4`) - Custom delays before music begins for professional preparation
+6. **Temporary mute** (`Duck_demo.mp4`) - Duck icon temporarily mutes playback while keeping timeline running
+7. **Session timer** (`Clock_demo.mp4`) - Built-in class timer for professional time management
+
+### **Technical Implementation**
+- **Video styling**: Consistent max-width 400px with 8px border-radius for visual cohesion
+- **Accessibility**: Proper fallback text for browsers without video support
+- **Performance**: Videos load on-demand with HTML5 controls
+- **Responsive design**: Videos scale appropriately across all device sizes
+- **SEO updates**: Page metadata updated to emphasize video demonstrations
+
+### **Content Strategy**
+- **Professional positioning**: All descriptions emphasize professional teaching capabilities
+- **Feature benefits**: Each video explanation connects to real classroom needs
+- **Logical progression**: Video order follows natural workflow from music selection to advanced controls
+- **Comprehensive coverage**: Every major Cadance feature now has visual demonstration
+
+### **Page Metadata Updates**
+- **Title**: Changed from "Feature guides" to "Video guides and tutorials"
+- **Description**: Updated to "Watch video demonstrations of core Cadance features"
+- **Keywords**: Added video-specific terms for improved SEO
+- **Social media**: Open Graph and Twitter cards reflect video content focus
