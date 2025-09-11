@@ -82,6 +82,7 @@
         <div class="container">
           <h1 id="how-to-features-hero">Cadance features guide</h1>
           <p class="subhead">Watch video demonstrations of core Cadance features.</p>
+          <p class="subhead hero-subtitle">Quick one-minute tutorials to get you started</p>
         </div>
       </div>
     </section>
@@ -91,58 +92,79 @@
         <div class="features-grid">
           <div class="feature-card">
             <h3>Library artist view</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Library_Artist_View_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Library artist view">
+              <video controls preload="none" poster="videos/Library_Artist_View_demo_poster.jpg">
+                <source src="videos/Library_Artist_View_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Browse your music collection by artist to quickly find the perfect track. Organize and access your professional music library efficiently.</p>
           </div>
           <div class="feature-card">
             <h3>Playing tracks</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Play_Track_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Playing tracks">
+              <video controls preload="none" poster="videos/Play_Track_demo_poster.jpg">
+                <source src="videos/Play_Track_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Navigate your music library and start playing tracks with one tap. See how Cadance organizes your music for quick access during class.</p>
           </div>
           <div class="feature-card">
             <h3>Changing tempo</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Tempo_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Changing tempo">
+              <video controls preload="none" poster="videos/Tempo_demo_poster.jpg">
+                <source src="videos/Tempo_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>See how Cadance adjusts tempo from 60% to 200% without pitch distortion, giving you precise control for any dance style or skill level.</p>
           </div>
           <div class="feature-card">
             <h3>Mastering repeats</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Repeat_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Mastering repeats">
+              <video controls preload="none" poster="videos/Repeat_demo_poster.jpg">
+                <source src="videos/Repeat_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Learn how to set up seamless loops for exercises and combinations. Perfect for drilling technique or extending movement sequences.</p>
           </div>
           <div class="feature-card">
             <h3>Start delays</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Start_Delay_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Start delays">
+              <video controls preload="none" poster="videos/Start_Delay_demo_poster.jpg">
+                <source src="videos/Start_Delay_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Set custom delays before music begins, giving you time to get in position and prepare your students. Professional preparation made easy.</p>
           </div>
           <div class="feature-card">
             <h3>Temporary mute</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Duck_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Temporary mute">
+              <video controls preload="none" poster="videos/Duck_demo_poster.jpg">
+                <source src="videos/Duck_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Hold down the duck icon to temporarily mute playback while keeping the music timeline running. Perfect for giving students a moment to focus on staying on tempo without the sound.</p>
           </div>
           <div class="feature-card">
             <h3>Session timer</h3>
-            <video controls width="100%" style="max-width: 400px; border-radius: 8px;">
-              <source src="videos/Clock_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-container" data-video-title="Session timer">
+              <video controls preload="none" poster="videos/Clock_demo_poster.jpg">
+                <source src="videos/Clock_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-duration">< 1 min</div>
+            </div>
             <p>Keep track of class time with the built-in session timer. Stay on schedule and manage your teaching time professionally.</p>
           </div>
         </div>
@@ -167,5 +189,19 @@
       <div class="footer-left"><small>© 2025 Cadance Music</small></div>
     </div>
   </footer>
+
+  <!-- Video Modal for Desktop -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+      <div class="video-modal-header">
+        <h3 class="video-modal-title" id="modal-title">Video Tutorial</h3>
+        <button class="video-modal-close" id="modal-close" aria-label="Close video">×</button>
+      </div>
+      <video id="modal-video" controls>
+        <source id="modal-source" src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 </body>
 </html>

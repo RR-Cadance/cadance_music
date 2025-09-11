@@ -24,6 +24,21 @@
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-1);
 }
+
+/* Limit features grid to max 3 columns on desktop */
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .feature-card {
   background: var(--surface);
   border: 1px solid rgba(255,255,255,0.06);
@@ -98,6 +113,7 @@
   cursor: pointer;
   position: relative;
   user-select: none;
+  -webkit-user-select: none; /* Safari support */
   transition: color .15s ease, font-weight .15s ease, background-color .15s ease, border-color .15s ease, transform .15s ease;
 }
 .personas-grid li[aria-checked="true"] {
@@ -713,4 +729,220 @@
   .breadcrumb nav {
     font-size: 0.8125rem;
   }
+}
+
+/* Video player with custom play button overlay */
+.video-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: var(--space-2) auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  pointer-events: auto; /* Ensure Firefox can click on video */
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide native video controls initially to prevent Edge issues */
+.video-container video::-webkit-media-controls {
+  display: none !important;
+}
+
+.video-container video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+/* Show controls when playing */
+.video-container.playing video::-webkit-media-controls {
+  display: flex !important;
+}
+
+.video-container.playing video::-webkit-media-controls-panel {
+  display: flex !important;
+}
+
+/* Custom play button overlay */
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9); /* Transparent white background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: all 0.3s ease;
+  z-index: 3; /* Higher z-index for Firefox */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Play triangle - much larger */
+.video-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 52%; /* Moved slightly right for better visual centering */
+  transform: translate(-50%, -50%); /* Standard centering */
+  width: 0;
+  height: 0;
+  border-left: 40px solid #4FD1C5; /* Much larger teal triangle */
+  border-top: 26px solid transparent;
+  border-bottom: 26px solid transparent;
+  pointer-events: none;
+  z-index: 4; /* Highest z-index for Firefox */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide custom play button and duration when video is playing */
+.video-container.playing::before,
+.video-container.playing::after,
+.video-container.playing .video-duration {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover effects - only animate the play button, not the container */
+.video-container:hover::before {
+  background: rgba(255, 255, 255, 1); /* Solid white on hover */
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Remove container hover animation */
+.video-container:hover {
+  /* No transform or box-shadow changes to container */
+}
+
+/* Mobile-specific video styling */
+@media (max-width: 599px) {
+  .video-container {
+    max-width: none;
+    width: 100%;
+    margin: var(--space-2) 0;
+  }
+  
+  /* Larger play button on mobile */
+  .video-container::before {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .video-container::after {
+    border-left: 50px solid #4FD1C5; /* Much larger teal triangle on mobile */
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
+  }
+}
+
+/* Desktop-specific improvements */
+@media (min-width: 600px) {
+  .video-container {
+    max-width: 600px;
+  }
+}
+
+/* Video popover modal for desktop */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+}
+
+.video-modal.active {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.video-modal-content {
+  position: relative;
+  width: min(90vw, 800px);
+  max-height: 85vh;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: var(--space-3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.video-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.video-modal-title {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--step-1);
+}
+
+.video-modal-close {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.video-modal-close:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.video-modal video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* Video duration badge */
+.video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+/* Hero subtitle styling */
+.hero-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
 }
