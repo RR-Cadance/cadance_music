@@ -754,22 +754,13 @@
   z-index: 1;
 }
 
-/* Hide native video controls initially to prevent Edge issues */
-.video-container video::-webkit-media-controls {
-  display: none !important;
+/* Hide native video controls initially, show when playing */
+.video-container video:not([controls]) {
+  pointer-events: none;
 }
 
-.video-container video::-webkit-media-controls-panel {
-  display: none !important;
-}
-
-/* Show controls when playing */
-.video-container.playing video::-webkit-media-controls {
-  display: flex !important;
-}
-
-.video-container.playing video::-webkit-media-controls-panel {
-  display: flex !important;
+.video-container.playing video {
+  pointer-events: auto;
 }
 
 /* Custom play button overlay */
@@ -858,72 +849,6 @@
   }
 }
 
-/* Video popover modal for desktop */
-.video-modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 2000;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* Safari support */
-}
-
-.video-modal.active {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-.video-modal-content {
-  position: relative;
-  width: min(90vw, 800px);
-  max-height: 85vh;
-  background: var(--surface);
-  border-radius: 16px;
-  padding: var(--space-3);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.video-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-2);
-}
-
-.video-modal-title {
-  margin: 0;
-  color: var(--text);
-  font-size: var(--step-1);
-}
-
-.video-modal-close {
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
-}
-
-.video-modal-close:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.video-modal video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  background: #000;
-}
 
 /* Video duration badge */
 .video-duration {

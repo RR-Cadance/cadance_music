@@ -301,28 +301,13 @@ function initMobileMenu() {
 initMobileMenu();
 
 /**
- * Custom video player with branded play button and desktop popover (progressive enhancement)
+ * Simplified video player with inline playback only (progressive enhancement)
  */
 function initVideoPlayers() {
   try {
     const containers = document.querySelectorAll('.video-container');
-    const modal = document.getElementById('video-modal');
-    const modalVideo = document.getElementById('modal-video');
-    const modalSource = document.getElementById('modal-source');
-    const modalTitle = document.getElementById('modal-title');
-    const modalClose = document.getElementById('modal-close');
     
     if (!containers.length) return;
-
-    const isDesktop = () => {
-      const width = window.innerWidth >= 600;
-      const userAgent = navigator.userAgent.toLowerCase();
-      const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-      const isTablet = /ipad/i.test(userAgent);
-      
-      // Consider tablets as desktop for video modal purposes
-      return width && (!isMobile || isTablet);
-    };
 
     // Lazy load video when user first interacts
     function lazyLoadVideo(video) {
@@ -333,71 +318,25 @@ function initVideoPlayers() {
       }
     }
 
-    // Cache desktop detection result to avoid multiple calls
-    const isDesktopCached = isDesktop();
-
-    // Open video in modal (desktop) or inline (mobile/Firefox)
+    // Play video inline for all devices
     function playVideo(container, video) {
-      const title = container.getAttribute('data-video-title') || 'Video Tutorial';
-      const source = video.querySelector('source').getAttribute('src');
+      // Lazy load the video
+      lazyLoadVideo(video);
       
-      if (isDesktopCached && modal && modalVideo && modalSource && modalTitle) {
-        // Desktop: Open in modal
-        // Ensure original video is paused and reset
-        video.pause();
-        video.currentTime = 0;
-        container.classList.remove('playing');
-        
-        modalTitle.textContent = title;
-        modalSource.setAttribute('src', source);
-        modalVideo.load();
-        modal.classList.add('active');
-        
-        // Wait a moment for modal to be visible, then play
-        setTimeout(() => {
-          modalVideo.play().catch(() => {
-            // Fallback to showing controls if autoplay fails
-            modalVideo.controls = true;
-          });
-        }, 100);
-        
-        // Prevent body scroll
-        document.body.style.overflow = 'hidden';
-      } else {
-        // Mobile/Firefox: Play inline
-        lazyLoadVideo(video);
-        
-        // Mark container as playing immediately for UI feedback
-        container.classList.add('playing');
-        
-        // For Chrome/Edge: ensure video is muted initially to allow autoplay
-        video.muted = true;
-        
-        // Attempt to play with error handling
-        setTimeout(() => {
-          const playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              // Unmute after successful play start
-              video.muted = false;
-            }).catch(() => {
-              container.classList.remove('playing');
-              // Try with user interaction required
-              video.controls = true;
-              video.muted = false;
-            });
-          }
-        }, 100);
-      }
-    }
-
-    // Close modal
-    function closeModal() {
-      if (modal && modalVideo) {
-        modal.classList.remove('active');
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
-        document.body.style.overflow = '';
+      // Mark container as playing for UI feedback
+      container.classList.add('playing');
+      
+      // Show native controls
+      video.controls = true;
+      
+      // Attempt to play
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If autoplay fails, just show controls - user can click play
+          container.classList.remove('playing');
+          video.controls = true;
+        });
       }
     }
 
@@ -407,12 +346,12 @@ function initVideoPlayers() {
 
       // Handle play button click on container
       function handlePlayClick(e) {
-        // Only block clicks if video is actually playing and has visible controls
-        if (e.target.tagName === 'VIDEO' && !video.paused && video.readyState > 2) {
+        // Don't interfere if user is clicking on video controls
+        if (e.target.tagName === 'VIDEO' && video.controls && !video.paused) {
           return;
         }
         
-        // Prevent default to avoid any browser-specific issues
+        // Prevent default to avoid browser-specific issues
         e.preventDefault();
         e.stopPropagation();
         
@@ -422,9 +361,8 @@ function initVideoPlayers() {
       // Add event listeners for cross-browser compatibility
       container.addEventListener('click', handlePlayClick);
       container.addEventListener('touchstart', handlePlayClick, { passive: false });
-      container.addEventListener('mousedown', handlePlayClick);
 
-      // Update container state when video plays/pauses (for inline mobile playback)
+      // Update container state when video plays/pauses
       video.addEventListener('play', () => {
         container.classList.add('playing');
       });
@@ -445,13 +383,6 @@ function initVideoPlayers() {
           playVideo(container, video);
         }
       });
-      
-      // Additional mousedown handler for Edge compatibility
-      container.addEventListener('mousedown', (e) => {
-        if (e.target === video || e.target.closest('video')) return;
-        e.preventDefault();
-        console.log('Mousedown prevented'); // Debug log
-      });
 
       // Make container focusable for keyboard users
       if (!container.hasAttribute('tabindex')) {
@@ -460,33 +391,6 @@ function initVideoPlayers() {
 
       // Add aria-label for accessibility
       container.setAttribute('aria-label', 'Play video demonstration');
-    });
-
-    // Modal event listeners
-    if (modal && modalClose) {
-      // Close button
-      modalClose.addEventListener('click', closeModal);
-
-      // Click outside modal to close
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-
-      // Escape key to close
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeModal();
-        }
-      });
-    }
-
-    // Handle window resize - close modal if switching to mobile
-    window.addEventListener('resize', () => {
-      if (!isDesktop() && modal && modal.classList.contains('active')) {
-        closeModal();
-      }
     });
 
   } catch (_) {
