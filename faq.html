@@ -74,6 +74,14 @@
       },
       {
         "@type": "Question",
+        "name": "Why is there a new Cadance beta app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We created a new app ID and TestFlight beta to enable the integrated watchOS app and a more visible app icon. Because it is technically a new app, Apple treats it as a separate install. You can safely delete the older, darker icon when you are ready, but any music you previously imported will need to be imported again into the new Cadance beta. This reset is a limitation of how app identifiers and TestFlight work, not something we can override."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Does Cadance support tempo change and repeats?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -181,10 +189,26 @@
             <summary>What is Cadance?</summary>
             <p>Cadance is a dance class music app built to keep classes moving with fast access, class‑friendly controls, and reliable playback. It’s the sequel to BarreNotes.</p>
           </details>
-
+ 
           <details>
             <summary>How can I try Cadance?</summary>
             <p>Join the iOS TestFlight: <a href="https://testflight.apple.com/join/vZ3jxhMe" target="_blank" rel="noopener">Download the free beta</a>.</p>
+          </details>
+
+          <details id="beta-upgrade">
+            <summary>Why is there a new Cadance beta app?</summary>
+            <p>To enable the integrated watchOS app and improve visibility in your app list, Cadance now uses a new app ID and TestFlight beta with a brighter icon. Because Apple treats this as a completely new app, it appears as a separate install.</p>
+            <p>You can safely delete the older, darker Cadance icon when you are ready. The only downside is that any music you imported into the previous beta will need to be imported again into the new one. This reset is a limitation of how app identifiers and TestFlight work, not something we can change.</p>
+            <div class="beta-upgrade-gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-3); margin: var(--space-3) auto;">
+              <figure style="margin: 0; flex: 1 1 200px; max-width: min(100%, 210px);">
+                <img src="cadance_testflight_upgrade.jpeg" alt="TestFlight list showing the new Cadance beta app ready to install" width="1125" height="2436" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius: 16px;">
+                <figcaption style="margin-top: 0.5rem;"><small>Look for the brighter Cadance icon in your TestFlight list.</small></figcaption>
+              </figure>
+              <figure style="margin: 0; flex: 1 1 200px; max-width: min(100%, 210px);">
+                <img src="cadance_testflight_detail.jpeg" alt="TestFlight detail screen for the new Cadance beta app with install button" width="1125" height="2436" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius: 16px;">
+                <figcaption style="margin-top: 0.5rem;"><small>Open the detail screen to install the new beta build.</small></figcaption>
+              </figure>
+            </div>
           </details>
 
           <details>
