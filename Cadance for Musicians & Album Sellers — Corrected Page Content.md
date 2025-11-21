@@ -106,7 +106,7 @@ Teachers buy your tracks from whatever platform you use - iTunes, Bandcamp, Amaz
 
 ## 10+ Years of Creating Music-Buying Teachers
 
-Cadance evolved from BarreNotes, launched in 2014 as the first professional music player for dance instruction. For over a decade, we've been training educators that professional music control requires music ownership.
+Cadance evolved from BarreNotes, launched in 2012 as the first professional music player for dance instruction. For over a decade, we've been training educators that professional music control requires music ownership.
 
 ### Our Track Record
 - **Thousands of teachers** worldwide who own music libraries
@@ -148,7 +148,7 @@ We're not asking you to join another platform. We're creating systematic demand 
 
 ## Footer Messaging
 
-*Cadance: Making streaming inadequate for dance professionals since 2014.*
+*Cadance: Making streaming inadequate for dance professionals since 2012.*
 
 ---
 
