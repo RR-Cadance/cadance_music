@@ -16,6 +16,44 @@
   min-height: 70svh;
 }
 
+/* Short hero variant (used on Partners page to keep content above the fold) */
+.parallax-panel--short {
+  min-height: 60svh;
+}
+
+.parallax-panel--short .parallax-fg {
+  padding-block: 0;
+}
+
+.parallax-panel--short .parallax-fg .container {
+  padding-bottom: max(var(--space-2), 4vh);
+}
+
+/* Remove tinted card styling for select heroes (e.g., How To + Music Training) */
+.parallax-panel--no-card.section-hero.parallax-panel .hero-copy,
+.parallax-panel--no-card.parallax-panel--interlude .parallax-fg .container {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  max-width: none;
+}
+
+/* Tighten vertical spacing in hero foreground so following content can overlap more */
+.parallax-panel--tight .parallax-fg .container {
+  padding-bottom: max(var(--space-2), 4vh);
+}
+
+/* On heroes without cards, center the title for a cleaner look */
+.parallax-panel--no-card .parallax-fg {
+  align-items: center;
+}
+.parallax-panel--no-card .parallax-fg .container {
+  text-align: center;
+}
+
 .parallax-bg,
 .parallax-overlay {
   position: absolute;
@@ -64,12 +102,14 @@
 /* Tablet amplitude */
 @media (min-width: 600px) {
   .parallax-panel { --amp: 30px; } /* tablet amplitude ±30px */
+  .parallax-panel--short { min-height: 55svh; }
 }
 
 /* Desktop amplitude and interlude height tweak */
 @media (min-width: 1024px) {
   .parallax-panel { --amp: 60px; } /* desktop amplitude ±60px */
   .parallax-panel--interlude { min-height: 75svh; }
+  .parallax-panel--short { min-height: 50svh; }
 }
 
 /* Respect reduced motion: no parallax movement */

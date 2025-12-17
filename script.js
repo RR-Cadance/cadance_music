@@ -346,10 +346,12 @@ function initVideoPlayers() {
 
       // Handle play button click on container
       function handlePlayClick(e) {
-        // Don't interfere if user is clicking on video controls
-        if (e.target.tagName === 'VIDEO' && video.controls && !video.paused) {
-          return;
-        }
+        // If already playing, never intercept taps/clicks.
+        // Safari/iOS relies on those events for pause/seek/controls.
+        if (!video.paused) return;
+
+        // If the user tapped the <video> element itself, let native controls handle it.
+        if (e.target && e.target.tagName === 'VIDEO') return;
         
         // Prevent default to avoid browser-specific issues
         e.preventDefault();
@@ -360,7 +362,7 @@ function initVideoPlayers() {
       
       // Add event listeners for cross-browser compatibility
       container.addEventListener('click', handlePlayClick);
-      container.addEventListener('touchstart', handlePlayClick, { passive: false });
+      // NOTE: Avoid touchstart interception; it can break Safari video controls.
 
       // Update container state when video plays/pauses
       video.addEventListener('play', () => {
@@ -378,6 +380,7 @@ function initVideoPlayers() {
       // Handle keyboard interaction for accessibility
       container.addEventListener('keydown', (e) => {
         if (e.key === ' ' || e.key === 'Enter') {
+          if (!video.paused) return;
           e.preventDefault();
           e.stopPropagation();
           playVideo(container, video);

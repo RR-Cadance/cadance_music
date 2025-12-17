@@ -112,6 +112,26 @@
 .section { padding-block: var(--space-2); }
 .section + .section { border-top: 1px solid rgba(255,255,255,0.06); }
 
+/* Bring key content up over the hero imagery (Partners page) */
+.section--overlap-hero {
+  position: relative;
+  z-index: 3;
+  margin-top: clamp(-12rem, -18vh, -6rem);
+  padding-top: 0;
+  border-top: 0; /* remove section divider line when overlapping hero */
+}
+
+/* Deeper overlap variant (used on How To + Music Training to keep cards on the hero image) */
+.section--overlap-hero--deep {
+  margin-top: clamp(-44rem, -72vh, -24rem);
+}
+
+.section--overlap-hero > .container > h1 {
+  text-align: center;
+  margin-top: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
 /* Hero section */
 .section-hero {
   padding-block: var(--space-2);
@@ -237,6 +257,17 @@
   /* Footer nav: tighter spacing and wrap on small screens */
   .footer-right nav { gap: 0.4rem 0.6rem; width: 100%; justify-content: flex-start; }
   .footer-right a { font-size: clamp(0.78rem, 0.74rem + 0.6vw, 0.9rem); }
+
+  /* Keep overlap shallower on mobile so content doesn't collide with the header */
+  .section--overlap-hero { margin-top: -12vh; }
+
+  /* Deep overlap still needs extra lift, but avoid colliding with fixed header */
+  .section--overlap-hero--deep { margin-top: -34vh; }
+  
+  /* Extra lift on very small devices so content clearly sits on the hero image */
+  @media (max-width: 380px) {
+    .section--overlap-hero--deep { margin-top: -38vh; }
+  }
 }
 
 /* Breakpoints */

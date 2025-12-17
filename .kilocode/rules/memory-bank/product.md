@@ -29,7 +29,7 @@ The site operates as a multi‑page marketing funnel:
    - Personas: freelancers, studio staff, company instructors, competition teams, online instructors
    - Screenshots: in‑context visuals with correct dimensions, lazy loading, async decoding; collapsible presentation
    - White Label teaser: highlight organizational option (positioned after final interstitial)
-   - CTA: Download the free beta (TestFlight) → https://testflight.apple.com/join/vZ3jxhMe
+   - CTA: Download on the App Store → https://apps.apple.com/us/app/cadance/id6748429968
 
 2) White Label (Organizations)
    - Who it’s for: large studios, companies, programs, universities, outreach
