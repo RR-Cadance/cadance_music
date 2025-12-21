@@ -959,3 +959,22 @@
 .reddit-landing #faq .folds details {
   text-align: left;
 }
+
+/* Reddit landing: keep the 2 testimonial cards centered as a block */
+.reddit-landing .reddit-testimonials-grid {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 600px) {
+  .reddit-landing .reddit-testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .reddit-landing .reddit-testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
