@@ -943,3 +943,19 @@
   margin: var(--space-2) 0 0;
   text-align: center;
 }
+
+/* Reddit landing: center section headings, but keep body text readable */
+.reddit-landing #social-proof h2,
+.reddit-landing #faq h2 {
+  text-align: center;
+}
+
+.reddit-landing #faq .folds {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reddit-landing #faq .folds details {
+  text-align: left;
+}
