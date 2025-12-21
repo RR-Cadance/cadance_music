@@ -8,7 +8,8 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 /
 ├── index.html                 # Teacher‑focused homepage
 ├── tempo-notes.html           # Tempo Notes: resources and Cadance features guide
-├── white-label.html           # White Label offering for orgs/institutions
+├── reddit/
+│   └── index.html             # Reddit campaign landing page (App Store CTA)
 ├── privacy.html               # Privacy policy
 ├── faq.html                   # Frequently asked questions
 ├── publishers/
@@ -75,6 +76,13 @@ Home (index.html)
 ├── Interludes (parallax panels)
 └── Contact CTAs
 
+Reddit Landing (reddit/index.html)
+├── Single-purpose header (logo only)
+├── Hero (headline + App Store CTA)
+├── Icon benefits (4 tiles)
+├── Social proof (teacher testimonials)
+└── Compact FAQ
+
 Tempo Notes (tempo-notes.html)
 ├── Hero (parallax)
 ├── Resources (cards, external links)
@@ -99,7 +107,7 @@ Publishers (publishers/index.html)
 └── Contact (permissions mailto)
 
 Footer (all pages)
-└── Footer navigation (Home → Music Makers → Tempo Notes → White Label → FAQ → Privacy) + copyright
+└── Footer navigation (Home → Musicians → How To → Music Training → Partners → FAQ → Privacy) + copyright
 ```
 
 ## Critical Implementation Paths

@@ -11,10 +11,15 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - FAQ at [faq.html](faq.html) - **UPDATED + MOBILE NAV**
 - Privacy policy at [privacy.html](privacy.html) - **UPDATED FOR CLARITY + MOBILE NAV**
 - Tempo Notes at [tempo-notes.html](tempo-notes.html) - **MOBILE NAV ADDED**
+- Reddit ad landing page at [reddit/index.html](reddit/index.html) - **NEW (2025-12-21): focused App Store download landing page**
 - Safety redirect at [publishers.html](publishers.html) → /publishers/
 
 ## Recent Change (2025-12-18)
 - **App Store launch CTA**: Replaced the iOS TestFlight download URL with the App Store URL across the site (including structured data), updated FAQ copy to point to the App Store, and replaced the home page beta upgrade banner with an App Store badge.
+
+## Recent Change (2025-12-21)
+- **Reddit campaign landing page**: Added a dedicated `/reddit/` landing page with a single-purpose header (logo only), above-the-fold App Store CTA, icon-style benefits, social proof, and a compact FAQ.
+- Added `/reddit/` to the sitemap for discovery.
 
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 

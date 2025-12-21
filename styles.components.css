@@ -871,3 +871,75 @@
   opacity: 0.8;
   margin-top: 0.5rem;
 }
+
+/* Reddit landing page (scoped) */
+.reddit-landing .header-inner {
+  justify-content: center;
+  align-items: center;
+}
+
+.reddit-landing .brand {
+  display: inline-flex;
+}
+
+.reddit-landing .app-store-cta img {
+  display: block;
+  max-width: min(100%, 240px);
+  height: auto;
+  margin: var(--space-3) auto;
+}
+
+.reddit-landing .icon-benefits {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  /* Force a clean 2×2 grid on typical tablet widths so a single card
+     doesn't wrap onto a third row and fall below the fold. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+
+@media (min-width: 900px) {
+  .reddit-landing .icon-benefits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.reddit-landing .icon-benefits li {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: var(--space-2);
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  text-align: left;
+}
+
+.reddit-landing .icon-benefits svg {
+  width: 28px;
+  height: 28px;
+  color: var(--brand);
+  flex: none;
+}
+
+.reddit-landing .icon-benefits strong {
+  display: block;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.reddit-landing .icon-benefits .benefit-sub {
+  display: block;
+  font-size: var(--step--1);
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0.1rem;
+}
+
+.reddit-landing #hero .trust-note {
+  margin: var(--space-2) 0 0;
+  text-align: center;
+}

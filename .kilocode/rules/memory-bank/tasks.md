@@ -285,3 +285,30 @@ Comprehensive SEO improvements including targeted meta keywords for each page's 
 - Enhanced discoverability for each audience segment
 - PWA-ready manifest configuration
 - Consistent branding in browser tabs and bookmarks
+
+---
+
+## Campaign Landing Page (e.g., /reddit/)
+**Last performed:** 2025-12-21
+**Status:** Completed
+
+**Files to modify:**
+- [`reddit/index.html`](reddit/index.html:1) — New single-purpose landing page (logo-only header, hero CTA, icon benefits, testimonials, FAQ)
+- [`styles.components.css`](styles.components.css:875) — Scoped landing page styles (only under `.reddit-landing`)
+- [`sitemap.xml`](sitemap.xml:1) — Add the campaign URL for discovery
+
+**Steps:**
+1. Create a new directory (e.g., `/reddit/`) with an `index.html`.
+2. Use a **single-purpose header** (logo only) and an **above-the-fold App Store CTA**.
+3. Add 3–4 benefits as icon tiles (avoid paragraphs).
+4. Add 1–2 teacher testimonials for social proof.
+5. Add an optional compact FAQ addressing common ad-traffic questions.
+6. Add the campaign path to [`sitemap.xml`](sitemap.xml:1).
+
+**Important considerations:**
+- Keep it usable without JS.
+- Keep styles scoped to the landing page (e.g., `.reddit-landing …`) to avoid site-wide regressions.
+- Use correct relative paths from subdirectories (e.g., `../styles.base.css`, `../app-store-badge.svg`).
+
+**Expected outcome:**
+- A fast, focused page optimized for ad traffic with a prominent App Store CTA and minimal distractions.

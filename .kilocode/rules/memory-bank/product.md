@@ -3,19 +3,15 @@
 ## Why This Project Exists
 Cadance is a dance class music app built to keep classes moving with fast access, class‑friendly controls, and reliable playback. The marketing site now serves three audiences:
 1) Dance teachers — the primary audience and homepage focus
-2) Organizations — studios, companies, programs via a White Label option
-3) Rights holders — clear, transparent permissions for using album artwork in App Store/Play and Cadance promotional materials
+2) Rights holders — clear, transparent permissions for using album artwork in App Store/Play and Cadance promotional materials
+3) Partners — artists/teachers and collaborators (social proof, resources, and campaign landing pages)
 
 ## Problems It Solves
 1. For Teachers
    - Speed and focus: less device fiddling, more time on students
    - Reliability: predictable playback that matches class flow
    - Organization: simple structure for sets/classes
-2. For Organizations (White Label)
-   - Consistent brand experience across static marketing surfaces
-   - Streamlined onboarding and coordination for large teaching teams
-   - Single contact path and clear timelines
-3. For Rights Holders (Publishers)
+2. For Rights Holders (Publishers)
    - Legal compliance with transparent usage scope
    - Proper credit and revocable permissions
    - Professional, repeatable process with stored records
@@ -31,18 +27,17 @@ The site operates as a multi‑page marketing funnel:
    - White Label teaser: highlight organizational option (positioned after final interstitial)
    - CTA: Download on the App Store → https://apps.apple.com/us/app/cadance/id6748429968
 
-2) White Label (Organizations)
-   - Who it’s for: large studios, companies, programs, universities, outreach
-   - Value pillars: brand consistency, simple rollout, priority coordination, built for teaching
-   - Process: email → scope proposal → confirm & coordinate
-   - CTA: enterprise mailto
-
-3) Publishers (Rights Holders)
+2) Publishers (Rights Holders)
    - Why partner: exposure to dance educators; controlled usage
    - Transparency: scope, regions, revocation, no resale, no third‑party licensing
    - Process: step‑by‑step email approval workflow
    - Showcase: in‑context images
    - CTA: partnerships mailto
+
+3) Campaign landing pages (e.g., Reddit)
+   - Single-purpose pages optimized for ad traffic
+   - Above-the-fold App Store CTA
+   - Short benefits (icon tiles) + social proof + compact FAQ
 
 ## User Experience Goals
 - Immediate clarity (benefits for teachers within seconds)

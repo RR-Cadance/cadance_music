@@ -89,7 +89,7 @@
 - Performance: Manual checks via browser dev tools
 - Accessibility: Manual checks and screen readers
 - Visual QA: debug/debug_{id}_detect.png and debug/debug_{id}_composited.png after each run
-- Analytics: None (privacy-first)
+- Analytics: Microsoft Clarity (project ID: t3xw7pzwu1)
 - Error tracking: Browser console during QA
 
 ## Security Considerations
@@ -100,8 +100,8 @@
 
 ## Source Layout (current)
 - index.html — Teacher-focused homepage
+- reddit/index.html — Campaign landing page (single-purpose App Store CTA)
 - tempo-notes.html — Music resources and Cadance features guide (includes interlude hero cadance_hero_34.webp)
-- white-label.html — Organizations and institutions
 - publishers/index.html — Rights-holder permissions
 - publishers.html — Meta-refresh redirect to /publishers/
 - privacy.html — Privacy policy
