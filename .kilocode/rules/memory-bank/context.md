@@ -21,6 +21,9 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - **Reddit campaign landing page**: Added a dedicated `/reddit/` landing page with a single-purpose header (logo only), above-the-fold App Store CTA, icon-style benefits, social proof, and a compact FAQ.
 - Added `/reddit/` to the sitemap for discovery.
 
+## Recent Change (2025-12-23)
+- **Reddit landing hero copy**: Added a benefit-driven CTA line above the App Store badge, a prominent iOS-only label, a short subscription/trial note below the badge, and a concise “no streaming subscription required” statement near the hero benefits.
+
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 
 ## Major Mobile Navigation Implementation (2025-09-01)
