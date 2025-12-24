@@ -872,25 +872,29 @@
   margin-top: 0.5rem;
 }
 
-/* Reddit landing page (scoped) */
-.reddit-landing .header-inner {
+/* Campaign/redirect landing pages (scoped) */
+.reddit-landing .header-inner,
+.barrenotes-landing .header-inner {
   justify-content: center;
   align-items: center;
 }
 
-.reddit-landing .brand {
+.reddit-landing .brand,
+.barrenotes-landing .brand {
   display: inline-flex;
 }
 
-.reddit-landing .app-store-cta img {
+.reddit-landing .app-store-cta img,
+.barrenotes-landing .app-store-cta img {
   display: block;
   max-width: min(100%, 240px);
   height: auto;
   margin: var(--space-3) auto var(--space-2);
 }
 
-/* Reddit landing: iOS availability label above App Store badge */
-.reddit-landing .app-store-kicker {
+/* Landing: CTA kicker above App Store badge */
+.reddit-landing .app-store-kicker,
+.barrenotes-landing .app-store-kicker {
   margin: var(--space-3) auto 0;
   max-width: 34rem;
   text-align: center;
@@ -903,11 +907,13 @@
   text-wrap: balance;
 }
 
-.reddit-landing .app-store-kicker .cta-accent {
+.reddit-landing .app-store-kicker .cta-accent,
+.barrenotes-landing .app-store-kicker .cta-accent {
   color: var(--brand);
 }
 
-.reddit-landing .app-store-label {
+.reddit-landing .app-store-label,
+.barrenotes-landing .app-store-label {
   width: fit-content;
   margin: var(--space-2) auto 0;
   padding: 0.4rem 0.85rem;
@@ -924,11 +930,13 @@
 }
 
 /* Tighten label → badge spacing */
-.reddit-landing .app-store-label + .app-store-cta img {
+.reddit-landing .app-store-label + .app-store-cta img,
+.barrenotes-landing .app-store-label + .app-store-cta img {
   margin-top: var(--space-2);
 }
 
-.reddit-landing .app-store-note {
+.reddit-landing .app-store-note,
+.barrenotes-landing .app-store-note {
   margin: 0 auto var(--space-3);
   max-width: 30rem;
   text-align: center;
@@ -940,7 +948,8 @@
   text-wrap: balance;
 }
 
-.reddit-landing .benefits-note {
+.reddit-landing .benefits-note,
+.barrenotes-landing .benefits-note {
   margin: 0 auto var(--space-3);
   max-width: 34rem;
   text-align: center;
@@ -952,7 +961,8 @@
   text-wrap: balance;
 }
 
-.reddit-landing .icon-benefits {
+.reddit-landing .icon-benefits,
+.barrenotes-landing .icon-benefits {
   list-style: none;
   margin: var(--space-3) 0 0;
   padding: 0;
@@ -964,12 +974,14 @@
 }
 
 @media (min-width: 900px) {
-  .reddit-landing .icon-benefits {
+  .reddit-landing .icon-benefits,
+  .barrenotes-landing .icon-benefits {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-.reddit-landing .icon-benefits li {
+.reddit-landing .icon-benefits li,
+.barrenotes-landing .icon-benefits li {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
@@ -980,20 +992,23 @@
   text-align: left;
 }
 
-.reddit-landing .icon-benefits svg {
+.reddit-landing .icon-benefits svg,
+.barrenotes-landing .icon-benefits svg {
   width: 28px;
   height: 28px;
   color: var(--brand);
   flex: none;
 }
 
-.reddit-landing .icon-benefits strong {
+.reddit-landing .icon-benefits strong,
+.barrenotes-landing .icon-benefits strong {
   display: block;
   font-weight: 800;
   color: var(--text);
 }
 
-.reddit-landing .icon-benefits .benefit-sub {
+.reddit-landing .icon-benefits .benefit-sub,
+.barrenotes-landing .icon-benefits .benefit-sub {
   display: block;
   font-size: var(--step--1);
   color: var(--muted);
@@ -1011,6 +1026,29 @@
 .reddit-landing #social-proof h2,
 .reddit-landing #faq h2 {
   text-align: center;
+}
+
+/* BarreNotes landing: center key section headings, but keep body text readable */
+.barrenotes-landing #what-is-new h2,
+.barrenotes-landing #name h2 {
+  text-align: center;
+}
+
+.barrenotes-landing #name .subhead {
+  text-align: center;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.barrenotes-landing #name .folds {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.barrenotes-landing #name .folds details {
+  text-align: left;
 }
 
 .reddit-landing #faq .folds {
