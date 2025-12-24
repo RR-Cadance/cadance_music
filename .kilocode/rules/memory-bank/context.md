@@ -33,6 +33,10 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - Added `/blog/` URLs to the sitemap for discovery.
 - Added a footer link to the Blog across the site.
 
+## Recent Change (2025-12-24)
+- **Navigation standardization**: Standardized header and footer navigation across all pages to use a consistent menu structure.
+- **Blog refinements**: Added AI Overview screenshots to the SEO post, tuned blog typography, and updated dates/content on early articles to reflect corrected timelines.
+
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 
 ## Major Mobile Navigation Implementation (2025-09-01)
