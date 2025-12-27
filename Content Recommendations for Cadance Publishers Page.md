@@ -92,9 +92,9 @@ When teachers can access these professional features, your music becomes an esse
 
 ### Historical Context Reframing
 
-**Current:** "BarreNotes, launched in 2014, trained thousands of dance teachers worldwide that professional music control requires music ownership."
+**Current:** "BarreNotes, launched in 2012, trained thousands of dance teachers worldwide that professional music control requires music ownership."
 
-**Recommended:** "Since launching BarreNotes in 2014, we've helped thousands of dance teachers worldwide discover the professional advantages of music ownership."
+**Recommended:** "Since launching BarreNotes in 2012, we've helped thousands of dance teachers worldwide discover the professional advantages of music ownership."
 
 **Key Changes:**
 - "trained...that requires" → "helped...discover advantages" (collaborative vs. prescriptive)
