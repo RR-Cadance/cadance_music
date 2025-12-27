@@ -45,6 +45,10 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - **Campaign landing improvements**:
   - Updated [reddit/index.html](reddit/index.html) and [barrenotes/index.html](barrenotes/index.html) with centered section headings/subheads, demo video blocks, pricing previews, and tighter objection-handling.
   - Simplified BarreNotes “What’s new vs BarreNotes?” card grid to three core items.
+- **Accessibility/readability improvements**:
+  - Increased CTA-adjacent microcopy sizing site-wide (notably the App Store note lines under badges).
+  - Updated demo videos: BarreNotes landing uses the Start Delay demo; Reddit landing uses the Tempo demo.
+  - Generated the missing tempo poster frame (`videos/Tempo_demo_poster.jpg`) for consistent previews.
 - **Blog additions**:
   - Added a “Why Cadance is a subscription” post at [blog/why-cadance-is-a-subscription/index.html](blog/why-cadance-is-a-subscription/index.html).
   - Standardized blog index ordering to newest → oldest.
