@@ -8,6 +8,7 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 - How To guides at [how-to.html](how-to.html) - **SIMPLIFIED INLINE VIDEO SYSTEM (2025-09-11)** + **HERO OVERLAP LAYOUT (2025-12-18)**
 - Music Training resources at [music-training.html](music-training.html) - **MOBILE NAV ADDED** + **HERO OVERLAP LAYOUT (2025-12-18)**
 - Partners showcase at [partners.html](partners.html) - **MOBILE NAV ADDED**
+- Pricing page at [pricing/index.html](pricing/index.html) - **NEW (2025-12-27): plans + objections + App Store CTA**
 - FAQ at [faq.html](faq.html) - **UPDATED + MOBILE NAV**
 - Privacy policy at [privacy.html](privacy.html) - **UPDATED FOR CLARITY + MOBILE NAV**
 - Tempo Notes at [tempo-notes.html](tempo-notes.html) - **MOBILE NAV ADDED**
@@ -36,6 +37,17 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 ## Recent Change (2025-12-24)
 - **Navigation standardization**: Standardized header and footer navigation across all pages to use a consistent menu structure.
 - **Blog refinements**: Added AI Overview screenshots to the SEO post, tuned blog typography, and updated dates/content on early articles to reflect corrected timelines.
+
+## Recent Change (2025-12-27)
+- **Pricing funnel build-out**:
+  - Added a dedicated pricing page at [pricing/index.html](pricing/index.html) (plans, FAQs, business expense note, App Store CTA).
+  - Strengthened pricing/trial messaging under the home hero App Store badge and added “See pricing & plans”.
+- **Campaign landing improvements**:
+  - Updated [reddit/index.html](reddit/index.html) and [barrenotes/index.html](barrenotes/index.html) with centered section headings/subheads, demo video blocks, pricing previews, and tighter objection-handling.
+  - Simplified BarreNotes “What’s new vs BarreNotes?” card grid to three core items.
+- **Blog additions**:
+  - Added a “Why Cadance is a subscription” post at [blog/why-cadance-is-a-subscription/index.html](blog/why-cadance-is-a-subscription/index.html).
+  - Standardized blog index ordering to newest → oldest.
 
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 

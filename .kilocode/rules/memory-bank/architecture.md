@@ -8,8 +8,16 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 /
 ├── index.html                 # Teacher‑focused homepage
 ├── tempo-notes.html           # Tempo Notes: resources and Cadance features guide
+├── pricing/
+│   └── index.html             # Pricing & plans (subscription tiers + FAQs)
 ├── reddit/
 │   └── index.html             # Reddit campaign landing page (App Store CTA)
+├── barrenotes/
+│   └── index.html             # BarreNotes → Cadance redirect/landing
+├── blog/
+│   ├── index.html             # Blog index
+│   └── why-cadance-is-a-subscription/
+│       └── index.html         # Subscription narrative post
 ├── privacy.html               # Privacy policy
 ├── faq.html                   # Frequently asked questions
 ├── publishers/
@@ -77,11 +85,20 @@ Home (index.html)
 └── Contact CTAs
 
 Reddit Landing (reddit/index.html)
-├── Single-purpose header (logo only)
+├── Header/nav (same site navigation, mobile menu)
 ├── Hero (headline + App Store CTA)
+├── Secondary CTA (Pricing)
+├── Demo video block
 ├── Icon benefits (4 tiles)
+├── Pricing preview
 ├── Social proof (teacher testimonials)
 └── Compact FAQ
+
+Pricing (pricing/index.html)
+├── Hero (price anchor + trial note)
+├── Plans (3 tiers)
+├── Clarifying boxes (all-features-included + business expense note)
+└── Pricing FAQ + App Store CTA
 
 Tempo Notes (tempo-notes.html)
 ├── Hero (parallax)

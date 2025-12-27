@@ -14,7 +14,7 @@
 
 ## Technical Constraints
 - Static hosting only: No server-side processing, no dynamic routes
-- No external dependencies: Self-contained codebase, system fonts only
+- No external dependencies for UI/frameworks: Self-contained codebase, system fonts only
 - No JavaScript frameworks: Vanilla HTML/CSS; JS referenced by pages for progressive enhancement only
 - GitHub Pages: Jekyll disabled via .nojekyll
 - Mobile-first requirement: Works on all device sizes
@@ -94,13 +94,17 @@
 
 ## Security Considerations
 - HTTPS via GitHub Pages
-- Content security: No third-party scripts/fonts; local assets only
-- Privacy: No tracking
+- Content security: No third-party fonts; site assets are local. One third-party script is used: Microsoft Clarity.
+- Privacy: Microsoft Clarity is disclosed in the privacy policy.
 - Contact: mailto links only (no form processing)
 
 ## Source Layout (current)
 - index.html — Teacher-focused homepage
 - reddit/index.html — Campaign landing page (single-purpose App Store CTA)
+- barrenotes/index.html — BarreNotes redirect/landing page
+- pricing/index.html — Pricing & plans
+- blog/index.html — Blog index
+- blog/why-cadance-is-a-subscription/index.html — Subscription narrative
 - tempo-notes.html — Music resources and Cadance features guide (includes interlude hero cadance_hero_34.webp)
 - publishers/index.html — Rights-holder permissions
 - publishers.html — Meta-refresh redirect to /publishers/

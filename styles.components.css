@@ -1024,12 +1024,27 @@
 
 /* Reddit landing: center section headings, but keep body text readable */
 .reddit-landing #social-proof h2,
+.reddit-landing #see-it h2,
+.reddit-landing #pricing-preview h2,
 .reddit-landing #faq h2 {
   text-align: center;
 }
 
+/* Landing pages: center section subheads for “See it in action” + pricing */
+.reddit-landing #see-it .subhead,
+.reddit-landing #pricing-preview .subhead,
+.barrenotes-landing #see-it .subhead,
+.barrenotes-landing #pricing-preview .subhead {
+  text-align: center;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* BarreNotes landing: center key section headings, but keep body text readable */
 .barrenotes-landing #what-is-new h2,
+.barrenotes-landing #see-it h2,
+.barrenotes-landing #pricing-preview h2,
 .barrenotes-landing #name h2 {
   text-align: center;
 }
@@ -1078,6 +1093,132 @@
   .reddit-landing .reddit-testimonials-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* Landing pages: secondary CTA + demo video block */
+.secondary-cta-row {
+  margin: 0 auto var(--space-3);
+  text-align: center;
+}
+
+/* Reusable note styles (used on home + landing pages) */
+.app-store-note,
+.benefits-note {
+  margin: 0 auto var(--space-3);
+  max-width: 34rem;
+  text-align: center;
+  color: var(--text);
+  opacity: 0.92;
+  font-weight: 650;
+  font-size: var(--step--1);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+a.secondary-cta {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a.secondary-cta:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a.secondary-cta:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.reddit-landing .secondary-cta-row,
+.barrenotes-landing .secondary-cta-row {
+  margin: 0 auto var(--space-3);
+  text-align: center;
+}
+
+.reddit-landing a.secondary-cta,
+.barrenotes-landing a.secondary-cta { /* inherits base .secondary-cta styles */ }
+
+.reddit-landing .actions,
+.barrenotes-landing .actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Pricing page: center headings + hero content */
+.pricing-page .section-hero .hero-copy {
+  text-align: center;
+}
+
+.pricing-page .section-hero .hero-pricing-meta {
+  margin-top: var(--space-2);
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-1);
+}
+
+.pricing-page .section-hero .hero-pricing-meta .app-store-note,
+.pricing-page .section-hero .hero-pricing-meta .benefits-note {
+  margin: 0;
+}
+
+.pricing-page .section-hero .hero-pricing-meta .benefits-note {
+  margin-top: 0.4rem;
+  opacity: 0.92;
+}
+
+.pricing-page .section h2 {
+  text-align: center;
+}
+
+.pricing-page .section .subhead,
+.pricing-page #faq .folds {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-page .actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.reddit-landing a.secondary-cta:hover,
+.barrenotes-landing a.secondary-cta:hover { /* inherits base hover */ }
+
+.reddit-landing a.secondary-cta:focus-visible,
+.barrenotes-landing a.secondary-cta:focus-visible { /* inherits base focus */ }
+
+.reddit-landing .demo-video,
+.barrenotes-landing .demo-video {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 12px;
+  margin: var(--space-3) auto 0;
+  background: #000;
+  box-shadow: var(--shadow-2);
+}
+
+.reddit-landing .demo-links,
+.barrenotes-landing .demo-links {
+  margin-top: var(--space-2);
+  text-align: center;
+}
+
+.reddit-landing .demo-links a,
+.barrenotes-landing .demo-links a {
+  font-weight: 800;
 }
 
 /* Blog (scoped) */
