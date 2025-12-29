@@ -1161,6 +1161,12 @@ a.secondary-cta:focus-visible {
   text-align: center;
 }
 
+/* Pricing page: make the hero subhead feel like the primary message */
+.pricing-page .section-hero .subhead {
+  font-size: var(--step-1);
+  line-height: 1.25;
+}
+
 .pricing-page .section-hero .hero-pricing-meta {
   margin-top: var(--space-2);
   max-width: 34rem;
