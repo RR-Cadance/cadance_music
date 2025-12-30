@@ -56,6 +56,9 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 ## Recent Change (2025-12-29)
 - **Pricing hero simplification**: Increased the pricing page hero subtitle prominence and moved trial/local pricing notes from the hero overlay down into the Plans section to reduce repetition.
 
+## Recent Change (2025-12-30)
+- **Reddit landing hero copy**: Updated the hero headline and App Store kicker line for the `/reddit/` campaign page.
+
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 
 ## Major Mobile Navigation Implementation (2025-09-01)
