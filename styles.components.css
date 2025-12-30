@@ -1207,6 +1207,164 @@ a.secondary-cta:focus-visible {
   gap: var(--space-2);
 }
 
+/* Pricing page: tier cards should feel progressively more rewarding */
+.pricing-page #plans .features-grid {
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.pricing-page .pricing-tier {
+  --tier-accent: rgba(255,255,255,0.18);
+  --tier-glow: rgba(255,255,255,0.06);
+  --tier-title: var(--text);
+  --tier-price: var(--text);
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: var(--space-4) var(--space-3);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-top: 3px solid var(--tier-accent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: var(--shadow-1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pricing-page .pricing-tier::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(700px 260px at 20% -25%, var(--tier-glow), transparent 62%);
+  pointer-events: none;
+}
+
+.pricing-page .pricing-tier--artist {
+  --tier-accent: rgba(79,209,197,0.95);
+  --tier-glow: rgba(79,209,197,0.22);
+}
+
+.pricing-page .pricing-tier--patron {
+  --tier-accent: rgba(167,139,250,0.95);
+  --tier-glow: rgba(167,139,250,0.22);
+}
+
+.pricing-page .pricing-tier:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.pricing-page .pricing-tier--popular {
+  box-shadow: var(--shadow-2);
+}
+
+.pricing-page .pricing-tier--popular {
+  border-color: rgba(79,209,197,0.28);
+  outline: 2px solid rgba(79,209,197,0.22);
+  outline-offset: -2px;
+}
+
+@media (min-width: 900px) {
+  .pricing-page .pricing-tier--popular {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+.pricing-page .pricing-tier__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.pricing-page .pricing-tier__head h3 {
+  margin: 0;
+  flex: 1;
+  min-width: 10rem;
+  color: var(--tier-title);
+  white-space: nowrap;
+}
+
+.pricing-page .pricing-tier__price {
+  margin: 0 0 var(--space-2);
+  color: var(--tier-price);
+  font-weight: 900;
+  font-size: var(--step-1);
+  letter-spacing: -0.015em;
+}
+
+.pricing-page .pricing-tier__sep {
+  margin: 0 0.35rem;
+  color: var(--muted);
+  font-weight: 750;
+  font-size: var(--step--1);
+  letter-spacing: 0;
+}
+
+.pricing-page .pricing-tier__desc {
+  margin: 0;
+  color: var(--muted);
+}
+
+.pricing-page .pricing-tier__perks {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1rem;
+}
+
+.pricing-page .pricing-tier__perks li {
+  margin: 0.5rem 0;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.pricing-page .pricing-tier__cta {
+  margin: var(--space-2) 0 0;
+}
+
+.tier-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text);
+  font-weight: 950;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: var(--step--1);
+  line-height: 1.2;
+  box-shadow: var(--shadow-1);
+  flex: none;
+}
+
+.tier-pill--popular {
+  background: linear-gradient(180deg, rgba(79,209,197,1), rgba(63,196,184,1));
+  border-color: rgba(79,209,197,0.9);
+  color: #00110f;
+  box-shadow:
+    0 0 0 1px rgba(79,209,197,0.35),
+    0 10px 30px rgba(79,209,197,0.20),
+    var(--shadow-2);
+  letter-spacing: 0.08em;
+}
+
+/* Spark: intentionally understated */
+.pricing-page .pricing-tier--spark {
+  --tier-accent: rgba(255,255,255,0.16);
+  --tier-glow: rgba(255,255,255,0.05);
+}
+
+/* Patron: feel premium */
+.pricing-page .pricing-tier--patron {
+  background:
+    radial-gradient(700px 260px at 20% -25%, rgba(167,139,250,0.18), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
+
 .reddit-landing a.secondary-cta:hover,
 .barrenotes-landing a.secondary-cta:hover { /* inherits base hover */ }
 

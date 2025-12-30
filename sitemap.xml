@@ -25,6 +25,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://cadance.music/patrons/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://cadance.music/blog/</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
