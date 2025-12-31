@@ -41,7 +41,7 @@
 1. **[0-4s]** Show finger tapping slower arrow multiple times, tempo decreasing by 2% each tap (100% → 98% → 96% → 94%)
 2. **[5-9s]** Show finger sliding left across control, tempo dropping smoothly to ~70%
 3. **[10-11s]** Continue slide right, tempo increasing smoothly to ~150%
-4. **[12-14s]** Show tempo range indicators (60% and 200% endpoints)
+4. **[12-14s]** Show tempo range indicators (-50% and +100% endpoints)
 5. **[15-18s]** Show finger tapping the center percentage value, tempo snapping back to 100%
 
 ---

@@ -77,7 +77,7 @@ Instead of leading with streaming limitations, lead with ownership advantages:
 Dance educators need precise tempo adjustment, reliable offline access, and seamless looping for effective instruction. Music ownership enables these advanced capabilities, creating professional-grade tools from your recordings.
 
 **Enhanced Teaching Capabilities:**
-- Real-time tempo control from 60-200% without pitch distortion
+- Real-time tempo control from -50 to +100% without pitch distortion
 - Complete offline reliability for uninterrupted instruction
 - Perfect looping for repetitive skill building
 - Distraction-free audio environment for focused learning
@@ -132,7 +132,7 @@ Rather than listing streaming limitations, focus on ownership capabilities:
 "Professional Music Control Through File Ownership
 
 **Precision Tempo Adjustment**
-Local file access enables real-time tempo changes from 60-200% without pitch distortion, allowing teachers to adapt any track for different skill levels and learning phases.
+Local file access enables real-time tempo changes from -50 to +100% without pitch distortion, allowing teachers to adapt any track for different skill levels and learning phases.
 
 **Reliable Offline Performance**
 Owned files guarantee consistent access regardless of internet connectivity, ensuring professional instruction never depends on external factors beyond the educator's control.
@@ -188,7 +188,7 @@ Dance educators require precise tempo adjustment, reliable offline access, and s
 "Why Educators Choose Music Ownership
 
 **Precision Teaching Control**
-Real-time tempo adjustment from 60-200% without pitch distortion enables teachers to adapt any track for different skill levels and learning phases.
+Real-time tempo adjustment from -50 to +100% without pitch distortion enables teachers to adapt any track for different skill levels and learning phases.
 
 **Professional Reliability**
 Complete offline access ensures consistent performance regardless of connectivity, giving educators full control over their instructional environment.

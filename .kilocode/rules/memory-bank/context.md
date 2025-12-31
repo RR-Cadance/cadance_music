@@ -160,7 +160,7 @@ Design system split across [styles.base.css](styles.base.css), [styles.layout.cs
 - **Reliability emphasis**: No ads, connectivity issues, or platform changes affecting classes
 
 ### **Professional Features Grid Enhancement**
-1. **Professional Tempo Control**: Precise 60-200% adjustment without pitch distortion
+1. **Professional Tempo Control**: Precise -50 to +100% adjustment without pitch distortion
 2. **Smart Start Delays**: Custom delays for professional preparation (NEW FEATURE)
 3. **Session Time Management**: Class timer and countdown (NEW FEATURE)
 4. **Offline Reliability**: Complete professional control without connectivity issues
@@ -305,7 +305,7 @@ The tone transformation eliminates potential friction with artists who use multi
 ### **Video Content Added**
 1. **Library artist view** (`Library_Artist_View_demo.mp4`) - Browse music collection by artist for efficient organization
 2. **Playing tracks** (`Play_Track_demo.mp4`) - Navigate library and start playing tracks with one tap
-3. **Changing tempo** (`Tempo_demo.mp4`) - Adjust tempo 60-200% without pitch distortion for any dance style
+3. **Changing tempo** (`Tempo_demo.mp4`) - Adjust tempo -50 to +100% without pitch distortion for any dance style
 4. **Mastering repeats** (`Repeat_demo.mp4`) - Set up seamless loops for exercises and combinations
 5. **Start delays** (`Start_Delay_demo.mp4`) - Custom delays before music begins for professional preparation
 6. **Temporary mute** (`Duck_demo.mp4`) - Duck icon temporarily mutes playback while keeping timeline running
