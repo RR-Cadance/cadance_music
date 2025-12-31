@@ -892,6 +892,48 @@
   margin: var(--space-3) auto var(--space-2);
 }
 
+/* Reddit landing: single high-contrast CTA button (replaces App Store badge) */
+.reddit-landing .claim-cta,
+.barrenotes-landing .claim-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: min(100%, 22rem);
+  margin: var(--space-3) auto var(--space-2);
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+
+  background: linear-gradient(180deg, rgba(79,209,197,1), rgba(63,196,184,1));
+  color: #00110f;
+  border: 1px solid rgba(79,209,197,0.95);
+  box-shadow:
+    0 0 0 1px rgba(79,209,197,0.25),
+    0 16px 48px rgba(79,209,197,0.20),
+    var(--shadow-2);
+
+  font-weight: 950;
+  font-size: clamp(1.05rem, 0.9rem + 0.9vw, 1.25rem);
+  letter-spacing: -0.01em;
+}
+
+.reddit-landing .claim-cta:hover,
+.barrenotes-landing .claim-cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(79,209,197,0.30),
+    0 20px 60px rgba(79,209,197,0.24),
+    var(--shadow-2);
+}
+
+.reddit-landing .claim-cta:focus-visible,
+.barrenotes-landing .claim-cta:focus-visible {
+  outline: 3px solid rgba(167,139,250,0.95);
+  outline-offset: 4px;
+}
+
 /* Landing: CTA kicker above App Store badge */
 .reddit-landing .app-store-kicker,
 .barrenotes-landing .app-store-kicker {
