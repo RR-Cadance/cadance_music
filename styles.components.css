@@ -185,6 +185,37 @@
   box-shadow: var(--shadow-2);
 }
 
+/* Testimonials: logos card (usage sightings, not endorsements) */
+.testimonial-card--logos::before {
+  content: none;
+}
+
+.testimonial-card--logos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.testimonial-card--logos .testimonial-logos {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+}
+
+.testimonial-card--logos figcaption {
+  margin: 0;
+}
+
+.testimonial-footnote {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9em;
+  line-height: 1.35;
+}
+
 /* Testimonial header with avatar */
 .testimonial-header {
   display: flex;
@@ -1120,9 +1151,9 @@
   text-align: left;
 }
 
-/* Reddit landing: keep the 2 testimonial cards centered as a block */
+/* Reddit landing: keep the testimonial cards centered as a block */
 .reddit-landing .reddit-testimonials-grid {
-  max-width: 52rem;
+  max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1133,9 +1164,9 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .reddit-landing .reddit-testimonials-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
