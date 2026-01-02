@@ -1,28 +1,34 @@
-# Cadance Marketing Site — Teachers, White Label, Publishers
+# Cadance Marketing Site
 
-A fast, static, mobile‑first site for the Cadance app. Purpose: 
-- Sell Cadance to dance teachers (homepage)
-- Offer a White Label option for organizations
-- Provide a transparent permissions flow for rights holders (Publishers)
+A fast, static, mobile‑first site for the Cadance app.
 
 - Live domain: https://cadance.music/
-- Tech stack: Static HTML/CSS (no frameworks, no build tools), minimal/no JS
+- Tech stack: Static HTML/CSS (no frameworks, no build tools) + minimal progressive enhancement JavaScript
 - Hosting: GitHub Pages (root publishing), custom domain cadance.music
 
 ## Repository Structure
 
 - Site entry: `index.html` (teacher‑focused homepage)
-- Secondary pages:
-  - `white-label.html` (organizations and institutions)
-  - `publishers/index.html` (rights‑holder permissions page)
+- Primary pages:
+  - `publishers/index.html` (musicians / rights‑holder permissions page)
   - `publishers.html` (stub redirect to `/publishers/`)
+  - `pricing/index.html` (pricing & plans)
+  - `reddit/index.html` (campaign landing)
+  - `barrenotes/index.html` (BarreNotes → Cadance landing)
+  - `how-to.html` (how-to videos)
+  - `music-training.html` (music training resources)
+  - `partners.html` (partners)
+  - `patrons/index.html` (patron directory)
+  - `blog/index.html` (blog index)
   - `tempo-notes.html` (Tempo Notes resources and feature guides)
+  - `faq.html` (FAQ)
+  - `privacy.html` (privacy)
 - Styles: Split CSS:
   - `styles.base.css` — tokens, reset, typography, utilities
   - `styles.layout.css` — header, nav, sections, hero, footer, breakpoints
   - `styles.components.css` — buttons, grids, cards, personas, folds, testimonials, modals, resource cards
   - `styles.parallax.css` — parallax panels, overlay scrim, CTA centering
-- JavaScript: `script.js` (progressive enhancement: parallax panels and selectable personas; imported as type="module"; pages remain fully usable without JS)
+- JavaScript: `script.js` (progressive enhancement: parallax + mobile menu toggle)
 - Assets: screenshots and brand images in repo root
   - `cadance_Icon.png` (favicon 32×32)
   - `cadance_word_d.svg` (brand wordmark)
@@ -37,31 +43,15 @@ Then visit http://localhost:8080 (or your chosen port).
 
 ## Information Architecture
 
-- Home — `index.html`
-  - Hero: clear value for teachers, single primary CTA (Join Waitlist)
-  - Features grid: speed, class control, reliability, organization, focus, heritage
-  - Who it’s for: freelancers, studio staff, company instructors, competition teams, online instructors
-  - Screenshots gallery: existing assets with proper alt, lazy loading, async decoding
-  - White Label teaser section linking to `white-label.html`
-  - Contact strip with mailto CTAs
-- White Label — `white-label.html`
-  - For studios, companies, training programs, universities, outreach
-  - Value pillars: brand consistency, simple rollout, priority coordination, built for teaching
-  - Process: email → scope proposal → confirm & coordinate
-  - Primary CTA: mailto
-- Publishers — `publishers/index.html`
-  - Rights‑holder permission flow with scope, process, and transparency
-  - Uses existing content, moved from the former homepage
-  - CTA: mailto
-- Optional redirect safety — `publishers.html`
-  - Meta refresh to `/publishers/` to preserve incoming links
+- Home — `index.html` (teacher-focused)
+- Musicians / rights holders — `publishers/index.html` (permissions + partnership messaging)
+- Pricing — `pricing/index.html` (3 tiers + FAQs + App Store CTA)
+- Campaign landers — `reddit/index.html`, `barrenotes/index.html` (tight funnel pages)
 
 ## Navigation and Linking
 
-- Header on all pages
-  - Home (or logo), Features (anchor on home), White Label, Publishers, Tempo Notes, Contact (mailto)
-- Footer on all pages
-  - Brand text, © year, links to White Label and Publishers
+- Header on all pages: consistent cross-page navigation
+- Footer on all pages: consistent cross-page navigation
 - Anchor offsets are handled via CSS `scroll-margin-top` for header height
 
 ## Styles and Components
@@ -79,14 +69,15 @@ Then visit http://localhost:8080 (or your chosen port).
 - Semantic landmarks and skip link to `#main`
 - Focus-visible outlines, keyboard navigable header and footer
 - Reduced motion respected
-- No external fonts or scripts
+- No external fonts
+- One third-party script is used: Microsoft Clarity (disclosed in `privacy.html`)
 - Images include width/height to prevent layout shift
 - Non‑hero images use `loading="lazy"` and `decoding="async"`
 - CSS smooth scrolling and safe‑area padding for mobile
 
 ## SEO and Social
 
-Per‑page meta in each HTML head:
+Per‑page meta in each HTML head (Open Graph + Twitter).
 
 - Home (`index.html`)
   - Title: Cadance — The music app for dance teachers
@@ -96,10 +87,6 @@ Per‑page meta in each HTML head:
   - Title: Feature your album in Cadance — Product photography and store listings
   - Description: Transparent, controlled, revocable permissions. Proper credit.
   - OG/Twitter image: `iPhoneLockScreen.png`
-- White Label (`white-label.html`)
-  - Title: Cadance White Label — For studios and organizations
-  - Description: Consistent brand experience, simple rollout, and priority coordination.
-  - OG/Twitter image: `iPhoneDetails.png`
 - Tempo Notes (`tempo-notes.html`)
   - Title: Cadance Tempo Notes — Music resources and feature guides
   - Description: Curated music education resources and Cadance feature notes.
@@ -107,9 +94,7 @@ Per‑page meta in each HTML head:
 
 ## CTAs and Contacts
 
-- Join Waitlist (general): `info.rondo@cadance.music`
-- White Label (enterprise): `info.rondo@cadance.music`
-- Publishers (rights holders): `info.rondo@cadance.music`
+- Contact: `info@cadance.music`
 
 All CTAs are mailto links with helpful subjects.
 
@@ -133,13 +118,10 @@ Pushing to `main` updates the live site after GitHub Pages rebuilds.
 
 ## Maintenance Workflow
 
-- Update content:
-  - Teacher homepage copy in `index.html`
-  - White Label copy in `white-label.html`
-  - Publishers copy in `publishers/index.html`
+- Update content: edit the relevant HTML page directly.
 - Update styles/tokens: edit `styles.base.css` (tokens), `styles.layout.css` (structure), `styles.components.css` (UI components), `styles.parallax.css` (effects)
 - Update images: replace files or update `src`/`width`/`height` attributes in HTML
-- JavaScript: referenced for progressive enhancement (parallax, selectable personas). The site remains fully functional without JS.
+- JavaScript: referenced for progressive enhancement (parallax + mobile menu toggle).
 
 ## QA Checklist before commit
 
@@ -159,45 +141,6 @@ Pushing to `main` updates the live site after GitHub Pages rebuilds.
 - 404 after deploy: confirm Pages branch/source and that `index.html` is at repo root
 - Redirects: `publishers.html` should forward to `/publishers/`
 
-## Changelog
+## Status
 
-- 2025‑08‑11
-  - Replaced single‑page rights‑holder site with teacher‑focused `index.html`
-  - Created `publishers/index.html` with migrated permissions content
-  - Added `white-label.html` for organizations and institutions
-  - Added `publishers.html` meta refresh to `/publishers/`
-  - Extended `styles.css` with features/personas/teaser components
-  - Removed legacy JS usage (pages no longer reference `script.js`)
-- 2025‑08‑17
-  - Home
-    - Hero CTA label changed to “Try the BarreNotes sequel” (kept TestFlight URL).
-    - Duplicated the same CTA under the “Everything you need, nothing you don’t” interlude.
-    - Centered hero and bottom interlude headings/subheads and CTA buttons.
-  - Personas (Home → “Roles that can benefit from Cadance”)
-    - Heavier label weight in both states (default/selected), centered labels, solid rounded border.
-    - Default: tinted background, near‑white text.
-    - Selected: near‑white background, dark text to match page background, brand red border, large overlapping checkmark.
-    - Added CSS token --brand-red and updated .personas-grid styles using aria-checked="true" for selection styling.
-  - Dance styles (Home → “Dance styles we support”)
-    - Reduced excess vertical spacing after expanded categories.
-    - Inset details text; compact spacing while preserving readability.
-  - Publishers (“Music we will spotlight”)
-    - Converted one‑line bullet lists to paragraphs to match Home style.
-    - Applied matching inset and spacing rules for expanded categories.
-  - Tempo Notes
-    - Added `tempo-notes.html` with link‑only resource cards (open in new tab) and a “Coming soon” placeholder for “My tempo changing demonstration”.
-    - Wired hero image to `cadance_hero_33.webp` and added “Tempo Notes” to the header navigation on all pages.
-
-- 2025‑08‑17 — CSS modularization and Personas messaging (phase 2)
-  - Split monolithic CSS into modular files loaded in order:
-    1) styles.base.css — tokens, reset, typography, utilities
-    2) styles.layout.css — header/nav, sections, hero, footer, breakpoints, themed backgrounds
-    3) styles.components.css — buttons, grids/cards, personas, folds, testimonials, modals, resource cards
-    4) styles.parallax.css — parallax panels, overlay scrim, CTA centering
-  - Updated all pages to load the new stylesheets and deprecated styles.css
-  - Personas (Home → “Roles that can benefit from Cadance”):
-    - Header default “You should consider auditioning Cadance”; dynamic when selections > 0 → “You have X reasons to audition Cadance”
-    - Added subheader “This fidget toy provides you with a convenient count”
-    - Converted items to singular; appended additional items; primary CTA composes selected options in mail body followed by “One more thing I would love:”
-    - Added secondary CTA “Try Cadance”; increased spacing above CTAs; two‑button layout with responsive wrapping
-  - Documentation and Memory Bank updated to reflect CSS split and personas enhancements
+Content + styling are intentionally frozen at this state.

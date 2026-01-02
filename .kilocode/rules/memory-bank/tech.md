@@ -3,7 +3,7 @@
 ## Core Technologies
 - HTML5: Semantic markup with accessibility features
 - CSS3: Modern layout with Grid, Flexbox, and custom properties (design tokens)
-- JavaScript: Progressive enhancement only (parallax); site remains fully usable without JS
+- JavaScript: Progressive enhancement (parallax + mobile menu toggle)
 - SVG/PNG: Vector logo and optimized raster screenshots
 
 ## Development Setup
@@ -33,7 +33,7 @@
 
 ## Performance Characteristics
 - Load time: Sub-2 second target on 3G
-- Bundle size: Minimal CSS/JS (JS unused), optimized images
+- Bundle size: Minimal CSS/JS, optimized images
 - Caching: Static assets with browser caching
 - CDN: GitHub Pages global distribution
 
@@ -51,7 +51,7 @@
 - Optimization: Compress images before commit
 - Naming: Descriptive filenames (iPhone..., iPad..., cadance_)
 - Alt text: Required and descriptive
-- Social previews: 1200×630 WebP assets at repo root (og_home_1200x630.webp, og_publishers_1200x630.webp, og_white_label_1200x630.webp, og_tempo_1200x630.webp); reference via absolute URLs under https://cadance.music/ in per‑page og:image and twitter:image.
+- Social previews: 1200×630 WebP assets at repo root (og_home_1200x630.webp, og_publishers_1200x630.webp, og_tempo_1200x630.webp); reference via absolute URLs under https://cadance.music/ in per‑page og:image and twitter:image.
 - Photoreal pipeline:
   - Prompts in midjourney-commands-batch-01-*.txt
   - Annotate pins+radii at tools/screen-corner-annotator.html
@@ -68,15 +68,15 @@
 - CTA centering: hero and bottom interlude headings/subheads and actions centered via CSS overrides
 - Smooth scrolling and anchor offset: CSS scroll-behavior + scroll-margin-top
 - Header stabilization (mobile): lock header height to var(--header-h); .primary-nav min-width: 0 with overflow-y: hidden and overscroll-behavior: contain; touch-action: pan-y to prevent horizontal drift; .header-inner overflow-x: hidden; tighter mobile gaps and reduced link padding/font-size.
-- Footer navigation: consistent footer nav across all pages ordered Home → Music Makers → Tempo Notes → White Label → FAQ → Privacy.
-- Top navigation: pages only (no in‑page anchors); identical across pages — Home, Music Makers, Tempo Notes, Contact; brand wordmark links to the page URL.
+- Footer navigation: consistent footer nav across all pages (Teachers, BarreNotes, Musicians, How To, Music Training, Partners, Pricing, Patron Directory, Blog, FAQ, Privacy).
+- Top navigation: pages only (no in‑page anchors); consistent across pages; brand wordmark links to the page URL.
 - Testimonials: modal title class .testimonial-title uses var(--brand) teal; modal star color matches cards (#FBBF24).
 
 ### JavaScript Strategy
-- Progressive enhancement: parallax scrolling for hero/interlude panels
-- script.js loaded as a module on all pages; effect disabled for prefers‑reduced‑motion
-- Pages remain fully usable with JS disabled; no hard dependencies
-- Future enhancements must preserve full no‑JS functionality
+- Progressive enhancement only:
+  - Parallax scrolling for hero/interlude panels
+  - Mobile menu toggle behavior
+  - Respect prefers-reduced-motion for motion effects
 
 ## Deployment Pipeline
 1. Source: GitHub repository main branch
@@ -110,11 +110,15 @@
 - publishers.html — Meta-refresh redirect to /publishers/
 - privacy.html — Privacy policy
 - faq.html — Frequently asked questions
+- partners.html — Partners page
+- music-training.html — Music training resources
+- how-to.html — How-to demos
+- patrons/index.html — Patron directory
 - styles.base.css — Tokens, reset, typography, utilities
 - styles.layout.css — Header/nav, sections, hero, footer, breakpoints, themed backgrounds
 - styles.components.css — Buttons, grids/cards, personas, folds, testimonials, modals, resource cards
 - styles.parallax.css — Parallax panels, overlay scrim, CTA centering
-- script.js — Progressive enhancement (parallax, selectable personas); referenced by pages
+- script.js — Progressive enhancement (parallax + mobile menu toggle)
 - README.md — Documentation and maintenance guide
 - .nojekyll — GitHub Pages Jekyll bypass
 - Assets — PNG/SVG images in repo root

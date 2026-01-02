@@ -7,6 +7,14 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 ```
 /
 ├── index.html                 # Teacher‑focused homepage
+├── publishers/
+│   └── index.html             # Musicians / rights holders page
+├── publishers.html            # Meta-refresh safety redirect → /publishers/
+├── how-to.html                # How-to video demos
+├── music-training.html        # Music training resources
+├── partners.html              # Partners page
+├── patrons/
+│   └── index.html             # Patron directory
 ├── tempo-notes.html           # Tempo Notes: resources and Cadance features guide
 ├── pricing/
 │   └── index.html             # Pricing & plans (subscription tiers + FAQs)
@@ -20,14 +28,11 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 │       └── index.html         # Subscription narrative post
 ├── privacy.html               # Privacy policy
 ├── faq.html                   # Frequently asked questions
-├── publishers/
-│   └── index.html             # Rights-holder permissions page
-├── publishers.html            # Meta-refresh safety redirect → /publishers/
 ├── styles.base.css            # Tokens, reset, typography, utilities
 ├── styles.layout.css          # Header/nav, sections, hero, footer, breakpoints
 ├── styles.components.css      # Buttons, grids/cards, personas, folds, testimonials, modals, resource cards
 ├── styles.parallax.css        # Parallax panels, overlay scrim, CTA centering
-├── script.js                  # Progressive enhancement (parallax, selectable personas); referenced by pages
+├── script.js                  # Progressive enhancement (parallax + mobile menu toggle)
 ├── README.md                  # Documentation and maintenance guide
 ├── CNAME                      # GitHub Pages custom domain config
 ├── .nojekyll                  # GitHub Pages Jekyll bypass
@@ -36,7 +41,6 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
     ├── cadance_word_d.svg
     ├── og_home_1200x630.webp
     ├── og_publishers_1200x630.webp
-    ├── og_white_label_1200x630.webp
     ├── og_tempo_1200x630.webp
     ├── cadance_hero_*.webp/.png
     ├── iPhoneDetails*.PNG
@@ -72,9 +76,14 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 Header (sticky)
 ├── Brand logo (cadance_word_d.svg)
 └── Primary navigation (pages only; consistent across pages):
-    • Home (index.html)
-    • Music Makers (publishers/)
-    • Tempo Notes (tempo-notes.html)
+    • For Teachers (index.html)
+    • BarreNotes → Cadance (barrenotes/)
+    • For Musicians (publishers/)
+    • How To (how-to.html)
+    • Music Training (music-training.html)
+    • Partners (partners.html)
+    • Pricing (pricing/)
+    • Blog (blog/)
     • Contact (mailto)
 
 Home (index.html)
@@ -85,17 +94,17 @@ Home (index.html)
 └── Contact CTAs
 
 Reddit Landing (reddit/index.html)
-├── Header/nav (same site navigation, mobile menu)
+├── Header/nav (same site navigation)
 ├── Hero (headline + App Store CTA)
 ├── Secondary CTA (Pricing)
 ├── Demo video block
 ├── Icon benefits (4 tiles)
-├── Pricing preview
+├── Pricing preview (full 3-tier grid)
 ├── Social proof (teacher testimonials)
 └── Compact FAQ
 
 Pricing (pricing/index.html)
-├── Hero (price anchor + trial note)
+├── Hero (overview)
 ├── Plans (3 tiers)
 ├── Clarifying boxes (all-features-included + business expense note)
 └── Pricing FAQ + App Store CTA
@@ -105,14 +114,6 @@ Tempo Notes (tempo-notes.html)
 ├── Resources (cards, external links)
 ├── Interlude hero (cadance_hero_34.webp)
 └── Cadance features guide (cards: Tempo changing demonstration, Importing music, How favorites work, Mastering repeats)
-
-White Label (white-label.html)
-├── Hero (CTA)
-├── Who it’s for (personas grid)
-├── Value pillars (features grid)
-├── Interlude (parallax)
-├── Process (ordered list)
-└── Contact (enterprise mailto)
 
 Publishers (publishers/index.html)
 ├── Hero (CTA)
@@ -137,7 +138,7 @@ Footer (all pages)
 ### Performance Strategy
 - No external dependencies: system fonts, no CDN requests
 - Optimized images: correct dimensions; lazy load non‑hero visuals
-- Minimal JavaScript: pages work without JS; [script.js](script.js:1) is a placeholder only
+- Minimal JavaScript: progressive enhancement for parallax + mobile menu toggle
 - Static hosting: GitHub Pages with custom domain and HTTPS
 
 ### Accessibility Implementation

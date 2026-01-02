@@ -24,7 +24,6 @@ The site operates as a multi‑page marketing funnel:
    - Features: speed, class control, reliability, organization, focus, heritage
    - Personas: freelancers, studio staff, company instructors, competition teams, online instructors
    - Screenshots: in‑context visuals with correct dimensions, lazy loading, async decoding; collapsible presentation
-   - White Label teaser: highlight organizational option (positioned after final interstitial)
    - CTA: Download on the App Store → https://apps.apple.com/us/app/cadance/id6748429968
 
 2) Publishers (Rights Holders)
@@ -44,12 +43,12 @@ The site operates as a multi‑page marketing funnel:
 - Trust signals: professional language, clear scope for rights holders, BarreNotes heritage
 - Mobile‑first, responsive across 320/768/1280px
 - Fast loading on slow networks (sub‑2 second target)
-- Accessibility (WCAG AA), fully functional without JavaScript
+- Accessibility (WCAG AA), progressive enhancement JavaScript
 - No friction: use mailto CTAs, no forms or external dependencies
 
 ## Success Criteria
 - Teachers initiate contact (join waitlist) from the homepage
-- Organizations initiate White Label inquiries via enterprise mailto
+- Patrons discover the Patron Directory and/or subscribe at a higher tier to support the mission
 - Rights holders understand scope and grant permissions via partnerships mailto
 - Site remains static, fast, and accessible with no external requests
 - OG/Twitter cards render correctly per page
@@ -63,7 +62,7 @@ The site operates as a multi‑page marketing funnel:
 ## Content Sources and Maintenance
 - Copy lives in the HTML files per page
 - Styles consolidated in a single CSS file with design tokens and shared components
-- JavaScript used for progressive enhancement (parallax) via script.js; pages remain fully usable without JS
+- JavaScript used for progressive enhancement via script.js (parallax + mobile menu toggle)
 - Assets live at repo root; preserve width/height in markup to avoid layout shift
 
 ## CTAs and Emails
@@ -72,7 +71,7 @@ The site operates as a multi‑page marketing funnel:
 ## Constraints
 - Static site only (GitHub Pages)
 - No external dependencies or web fonts
-- Must operate without JavaScript; JS file retained only as a placeholder
+- Static + dependency-free; JavaScript limited to progressive enhancement
 - WCAG AA accessibility baseline
 
 ## Roadmap Notes
