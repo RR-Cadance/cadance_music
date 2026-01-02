@@ -194,6 +194,31 @@
   border-radius: 16px;
   padding: var(--space-3);
   box-shadow: var(--shadow-2);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Make the entire testimonial card tappable (opens CSS-only modal via :target) */
+.testimonial-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.testimonial-card-link .testimonial-card {
+  cursor: pointer;
+}
+
+.testimonial-card-link:hover .testimonial-card {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 0 0 0 1px rgba(79,209,197,0.18), var(--shadow-2);
+}
+
+.testimonial-card-link:focus-visible {
+  outline: 3px solid rgba(79,209,197,0.95);
+  outline-offset: 4px;
 }
 
 /* Testimonials: logos card (usage sightings, not endorsements) */
@@ -287,13 +312,14 @@
 }
 
 /* Testimonial link styles */
+/*
 .section-testimonials .more-link {
   display: inline-block;
   font-weight: 700;
   color: var(--brand);
   text-decoration: underline;
   text-underline-offset: 2px;
-}
+} */
 .section-testimonials .more-link:hover,
 .section-testimonials .more-link:focus-visible {
   text-decoration-thickness: 2px;
@@ -1084,12 +1110,44 @@
   text-align: left;
 }
 
-.reddit-landing .icon-benefits svg,
-.barrenotes-landing .icon-benefits svg {
-  width: 28px;
-  height: 28px;
+.reddit-landing .icon-benefits .benefit-icon,
+.barrenotes-landing .icon-benefits .benefit-icon {
+  width: 38px;
+  height: 38px;
   color: var(--brand);
   flex: none;
+}
+
+/* Turtle glyph has a wider, lower silhouette than the others; scale it up slightly for balance. */
+.reddit-landing .icon-benefits .benefit-icon--turtle,
+.barrenotes-landing .icon-benefits .benefit-icon--turtle {
+  width: 48px;
+  height: 48px;
+}
+
+/* Landing benefit tiles:
+   - 2×2 mode (default): icon stays left of the text (row layout)
+   - 1×4 mode (>=900px): icon stacks above the text for a cleaner narrow-card layout
+*/
+@media (min-width: 900px) {
+  .reddit-landing .icon-benefits li,
+  .barrenotes-landing .icon-benefits li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .reddit-landing .icon-benefits .benefit-icon,
+  .barrenotes-landing .icon-benefits .benefit-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .reddit-landing .icon-benefits .benefit-icon--turtle,
+  .barrenotes-landing .icon-benefits .benefit-icon--turtle {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .reddit-landing .icon-benefits strong,
@@ -1179,32 +1237,136 @@
   margin-top: var(--space-1);
 }
 
-/* Reddit landing: center the single plan card as a block */
+/* Reddit landing: pricing cards
+   - Mobile: single column
+   - Desktop: single row
+*/
 .reddit-landing #plans .features-grid {
-  /* Force a single column so the one visible card expands (no “reserved” space). */
-  grid-template-columns: 1fr;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
+  /* Override global grid with a simple flex stack that turns into a single row on desktop. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 72rem;
+  /* Add breathing room from the section heading above and the CTA row below */
+  margin: var(--space-3) auto var(--space-2);
 }
 
-/* Reddit landing: center content inside the plan card */
-.reddit-landing #plans .pricing-tier {
+.reddit-landing #plans .features-grid > .feature-card {
+  flex: 1 1 0;
+}
+
+@media (min-width: 1024px) {
+  .reddit-landing #plans .features-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* Reddit landing: plan card typography + layout */
+.reddit-landing #plans .pricing-tier,
+.barrenotes-landing #plans .pricing-tier {
   text-align: center;
+  position: relative;
+  border-radius: 16px;
 }
 
-.reddit-landing #plans .pricing-tier__head {
+.reddit-landing #plans .pricing-tier__head,
+.barrenotes-landing #plans .pricing-tier__head {
+  display: flex;
   justify-content: center;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
-.reddit-landing #plans .pricing-tier__head h3 {
+.reddit-landing #plans .pricing-tier__head h3,
+.barrenotes-landing #plans .pricing-tier__head h3 {
+  margin: 0;
   flex: 0 1 auto;
   min-width: 0;
 }
 
-.reddit-landing #plans .pricing-tier__perks {
+.reddit-landing #plans .pricing-tier__price,
+.barrenotes-landing #plans .pricing-tier__price {
+  margin: 0 0 var(--space-1);
+  font-size: var(--step-0);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.reddit-landing #plans .pricing-tier__sep,
+.barrenotes-landing #plans .pricing-tier__sep {
+  margin: 0 0.35rem;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: var(--step--1);
+}
+
+.reddit-landing #plans .pricing-tier__desc,
+.barrenotes-landing #plans .pricing-tier__desc {
+  margin: 0;
+}
+
+.reddit-landing #plans .pricing-tier__perks,
+.barrenotes-landing #plans .pricing-tier__perks {
+  margin: var(--space-2) 0 0;
   padding-left: 0;
   list-style-position: inside;
+}
+
+/* Reddit landing: ensure content remains readable on the highlighted “Artist” card */
+.reddit-landing #plans .pricing-tier--popular p,
+.reddit-landing #plans .pricing-tier--popular li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.reddit-landing #plans .pricing-tier--popular .pricing-tier__sep,
+.barrenotes-landing #plans .pricing-tier--popular .pricing-tier__sep {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Reddit landing: make The Artist stand out (color + elevation) */
+.reddit-landing #plans .pricing-tier--popular,
+.barrenotes-landing #plans .pricing-tier--popular {
+  /* Slight extra top padding to balance the overlapping pill */
+  padding-top: calc(var(--space-3) + 0.75rem);
+
+  background:
+    radial-gradient(700px 260px at 20% -25%, rgba(79,209,197,0.32), transparent 62%),
+    linear-gradient(180deg, rgba(79,209,197,0.14), rgba(255,255,255,0.03));
+  border-color: rgba(79,209,197,0.34);
+  box-shadow:
+    0 18px 56px rgba(79,209,197,0.20),
+    var(--shadow-2);
+}
+
+@media (min-width: 1024px) {
+  .reddit-landing #plans .pricing-tier--popular,
+  .barrenotes-landing #plans .pricing-tier--popular {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+/* Reddit landing: pin the “Most Popular” pill to the top-right */
+.reddit-landing #plans .pricing-tier--popular .tier-pill,
+.barrenotes-landing #plans .pricing-tier--popular .tier-pill {
+  position: absolute;
+  top: -0.85rem; /* overlap the card edge */
+  right: 0.9rem;
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+/* Reddit landing: use a high-contrast pill so it reads instantly */
+.reddit-landing #plans .pricing-tier--popular .tier-pill--popular,
+.barrenotes-landing #plans .pricing-tier--popular .tier-pill--popular {
+  background: linear-gradient(180deg, rgba(251,191,36,1), rgba(245,158,11,1));
+  border-color: rgba(251,191,36,0.95);
+  color: #1f1300;
+  box-shadow:
+    0 0 0 1px rgba(251,191,36,0.25),
+    0 14px 36px rgba(251,191,36,0.22),
+    var(--shadow-2);
 }
 
 /* Landing pages: center section subheads for “See it in action” + pricing */
@@ -1235,24 +1397,6 @@
   margin-right: auto;
 }
 
-.barrenotes-landing #plans .pricing-tier {
-  text-align: center;
-}
-
-.barrenotes-landing #plans .pricing-tier__head {
-  justify-content: center;
-}
-
-.barrenotes-landing #plans .pricing-tier__head h3 {
-  flex: 0 1 auto;
-  min-width: 0;
-}
-
-.barrenotes-landing #plans .pricing-tier__perks {
-  padding-left: 0;
-  list-style-position: inside;
-}
-
 .barrenotes-landing #name .subhead {
   text-align: center;
   max-width: 52rem;
@@ -1280,8 +1424,9 @@
   text-align: left;
 }
 
-/* Reddit landing: keep the testimonial cards centered as a block */
-.reddit-landing .reddit-testimonials-grid {
+/* Landing pages: keep the testimonial cards centered as a block */
+.reddit-landing .reddit-testimonials-grid,
+.barrenotes-landing .reddit-testimonials-grid {
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
@@ -1289,14 +1434,16 @@
 }
 
 @media (min-width: 600px) {
-  .reddit-landing .reddit-testimonials-grid {
+  .reddit-landing .reddit-testimonials-grid,
+  .barrenotes-landing .reddit-testimonials-grid {
     /* Keep the 2 cards centered instead of stretching edge-to-edge */
     grid-template-columns: repeat(2, minmax(0, 26rem));
   }
 }
 
 @media (min-width: 900px) {
-  .reddit-landing .reddit-testimonials-grid {
+  .reddit-landing .reddit-testimonials-grid,
+  .barrenotes-landing .reddit-testimonials-grid {
     /* Keep testimonials visually centered on desktop (page only has 2 cards). */
     grid-template-columns: repeat(2, minmax(0, 26rem));
   }
@@ -1398,6 +1545,11 @@ a.secondary-cta:focus-visible {
   text-align: center;
 }
 
+/* Pricing page: give the plan cards some breathing room under the heading */
+.pricing-page #plans h2 {
+  margin-bottom: var(--space-4);
+}
+
 .pricing-page .section .subhead,
 .pricing-page #faq .folds {
   max-width: 52rem;
@@ -1414,8 +1566,57 @@ a.secondary-cta:focus-visible {
 
 /* Pricing page: tier cards should feel progressively more rewarding */
 .pricing-page #plans .features-grid {
+  /* Match the landing-page behavior:
+     - Mobile: stacked cards
+     - Desktop: single row
+     Also ensures cards size to their content (no equal-height rows). */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   gap: var(--space-2);
-  margin-top: var(--space-2);
+  max-width: 72rem;
+  /* Give breathing room under the section heading */
+  margin: var(--space-3) auto 0;
+  overflow: visible;
+}
+
+/* Pricing: make entire tier cards clickable without looking like plain links */
+.pricing-tier-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pricing-tier-link:focus-visible {
+  outline: 3px solid rgba(79,209,197,0.95);
+  outline-offset: 4px;
+}
+
+/* When the card is a link, keep the hover styling from the card styles */
+.pricing-tier-link:hover {
+  box-shadow: var(--shadow-2);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Let the Patron card show a “directory” line without needing a nested <a> */
+.pricing-tier-link .secondary-cta {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .pricing-page #plans .features-grid {
+    flex-direction: row;
+    align-items: flex-start; /* avoid equal-height stretching */
+  }
+}
+
+.pricing-page #plans .features-grid > .feature-card {
+  flex: 1 1 0;
 }
 
 .pricing-page .pricing-tier {
@@ -1425,7 +1626,10 @@ a.secondary-cta:focus-visible {
   --tier-price: var(--text);
 
   position: relative;
-  overflow: hidden;
+  isolation: isolate; /* keep glow layers/pills predictable */
+  z-index: 0;
+  /* Allow tier pills (and outer glow) to overlap outside the card */
+  overflow: visible;
   border-radius: 16px;
   padding: var(--space-4) var(--space-3);
   border: 1px solid rgba(255,255,255,0.12);
@@ -1440,7 +1644,15 @@ a.secondary-cta:focus-visible {
   position: absolute;
   inset: -1px;
   background: radial-gradient(700px 260px at 20% -25%, var(--tier-glow), transparent 62%);
+  border-radius: inherit;
   pointer-events: none;
+  z-index: -1;
+}
+
+/* Ensure content (including pills) always renders above the sheen layer */
+.pricing-page .pricing-tier > * {
+  position: relative;
+  z-index: 1;
 }
 
 .pricing-page .pricing-tier--artist {
@@ -1454,50 +1666,82 @@ a.secondary-cta:focus-visible {
 }
 
 .pricing-page .pricing-tier:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow-2);
   border-color: rgba(255,255,255,0.18);
 }
 
-.pricing-page .pricing-tier--popular {
-  box-shadow: var(--shadow-2);
+/* Pricing page: match landing-page sophistication */
+.pricing-page #plans .pricing-tier {
+  text-align: center;
 }
 
-.pricing-page .pricing-tier--popular {
-  border-color: rgba(79,209,197,0.28);
-  outline: 3px solid rgba(79,209,197,0.22);
-  outline-offset: -2px;
-}
-
-@media (min-width: 900px) {
-  .pricing-page .pricing-tier--popular {
-    transform: translateY(-4px) scale(1.02);
-  }
-}
-
+/* Keep the tier head simple: centered title; pills are pinned separately when present. */
 .pricing-page .pricing-tier__head {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: baseline;
   gap: var(--space-2);
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .pricing-page .pricing-tier__head h3 {
   margin: 0;
-  flex: 1;
-  min-width: 10rem;
+  flex: 0 1 auto;
+  min-width: 0;
   color: var(--tier-title);
-  white-space: nowrap;
+  white-space: normal;
+}
+
+/* Artist (Most Popular): color + elevation + overlapping pill */
+.pricing-page #plans .pricing-tier--popular {
+  /* Slight extra top padding to balance the overlapping pill */
+  padding-top: calc(var(--space-4) + 0.55rem);
+
+  background:
+    radial-gradient(700px 260px at 20% -25%, rgba(79,209,197,0.32), transparent 62%),
+    linear-gradient(180deg, rgba(79,209,197,0.14), rgba(255,255,255,0.03));
+  border-color: rgba(79,209,197,0.34);
+  box-shadow:
+    0 18px 56px rgba(79,209,197,0.20),
+    var(--shadow-2);
+}
+
+@media (min-width: 900px) {
+  .pricing-page #plans .pricing-tier--popular {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+/* Spark: lowest in the “step-up” stack */
+@media (min-width: 900px) {
+  .pricing-page #plans .pricing-tier--spark {
+    transform: translateY(0);
+  }
+}
+
+.pricing-page #plans .pricing-tier--popular .tier-pill {
+  position: absolute;
+  top: -3.0rem; /* overlap the card edge */
+  right: 0.9rem;
+  z-index: 3;
+  transform: rotate(3deg);
+}
+
+/* Use the same high-contrast amber pill as the landing pages */
+.pricing-page #plans .pricing-tier--popular .tier-pill--popular {
+  background: linear-gradient(180deg, rgba(251,191,36,1), rgba(245,158,11,1));
+  border-color: rgba(251,191,36,0.95);
+  color: #1f1300;
+  box-shadow:
+    0 0 0 1px rgba(251,191,36,0.25),
+    0 14px 36px rgba(251,191,36,0.22),
+    var(--shadow-2);
 }
 
 .pricing-page .pricing-tier__price {
-  margin: 0 0 var(--space-2);
-  color: var(--tier-price);
-  font-weight: 400;
-  font-size: var(--step-1);
+  margin: 0 0 var(--space-1);
+  font-size: var(--step-0);
+  line-height: 1.2;
   letter-spacing: -0.015em;
 }
 
@@ -1516,7 +1760,8 @@ a.secondary-cta:focus-visible {
 
 .pricing-page .pricing-tier__perks {
   margin: var(--space-2) 0 0;
-  padding-left: 1.1rem;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 .pricing-page .pricing-tier__perks li {
@@ -1557,6 +1802,17 @@ a.secondary-cta:focus-visible {
   letter-spacing: 0.04em;
 }
 
+.tier-pill--patron {
+  background: linear-gradient(180deg, rgba(167,139,250,1), rgba(139,92,246,1));
+  border-color: rgba(167,139,250,0.95);
+  color: #12001f;
+  box-shadow:
+    0 0 0 1px rgba(167,139,250,0.22),
+    0 14px 36px rgba(167,139,250,0.20),
+    var(--shadow-2);
+  letter-spacing: 0.04em;
+}
+
 /* Spark: intentionally understated */
 .pricing-page .pricing-tier--spark {
   --tier-accent: rgba(255,255,255,0.16);
@@ -1568,6 +1824,52 @@ a.secondary-cta:focus-visible {
   background:
     radial-gradient(700px 260px at 20% -25%, rgba(167,139,250,0.18), transparent 62%),
     linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
+
+/* Patron: make it more visually rewarding than Spark, but keep Artist as the hero */
+.pricing-page #plans .pricing-tier--patron {
+  /* Balance the overlapping Supporter pill */
+  padding-top: calc(var(--space-4) + 0.45rem);
+
+  border-color: rgba(167,139,250,0.34);
+  /* Premium glow (stronger than Spark), but keep Artist as the hero */
+  box-shadow:
+    0 0 0 1px rgba(167,139,250,0.18),
+    0 14px 44px rgba(167,139,250,0.22),
+    var(--shadow-2);
+}
+
+@media (min-width: 900px) {
+  .pricing-page #plans .pricing-tier--patron {
+    /* Second step: Spark (lowest) → Patron → Artist (hero) */
+    transform: translateY(-2px);
+  }
+}
+
+/* Patron: add an outer “aura” so the glow reads on dark backgrounds */
+.pricing-page #plans .pricing-tier--patron::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: inherit;
+  background:
+    radial-gradient(420px 260px at 78% 8%, rgba(167,139,250,0.50), transparent 64%),
+    radial-gradient(560px 360px at 35% 120%, rgba(79,209,197,0.12), transparent 72%);
+  filter: blur(14px);
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pricing-page #plans .pricing-tier--patron .tier-pill {
+  position: absolute;
+  top: -3.5rem; /* overlap the card edge like the Most Popular pill */
+  right: 0.9rem;
+  z-index: 3;
+  transform: rotate(2deg);
+  /* Larger, more noticeable “Supporter” pill */
+  font-size: var(--step--1);
+  padding: 0.5rem 0.95rem;
 }
 
 .reddit-landing a.secondary-cta:hover,

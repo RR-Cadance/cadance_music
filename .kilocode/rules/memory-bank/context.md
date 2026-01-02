@@ -59,6 +59,13 @@ The site is a static, multi‑page marketing site hosted on GitHub Pages:
 ## Recent Change (2025-12-30)
 - **Reddit landing hero copy**: Updated the hero headline and App Store kicker line for the `/reddit/` campaign page.
 
+## Recent Change (2026-01-02)
+- **Reddit landing pricing preview**: Updated the “Choose Your Path to Flawless Music” pricing cards so they display as a single row on desktop (single column on mobile), and enhanced the “Artist” plan’s visual emphasis with a top-right “Most Popular” pill.
+- **Testimonials UX**: Made the entire “What teachers say” testimonial card tappable (CSS-only modal trigger) and removed visible inline links inside the collapsed preview text (Home + Reddit + BarreNotes landing pages).
+- **Landing hero benefit icons**: Switched the 4 benefit tiles on the Reddit and BarreNotes landing pages to use local SVG Repo icon files (turtle/tempo, wait-time, playlist, award) via `<use>`.
+- **Pricing page tier card styling**: Brought the same “sophisticated” pricing card treatment from the Reddit landing page to the main pricing page, keeping Artist as “Most Popular”, making Patron feel more premium, and ensuring cards size to their content (no forced equal heights).
+- **Pricing cards now link to the App Store**: Made pricing tier cards clickable on the main pricing page and the Reddit/BarreNotes landing pages (Spark/Artist/Patron where applicable), linking directly to the App Store product page.
+
 Design system split across [styles.base.css](styles.base.css), [styles.layout.css](styles.layout.css), [styles.components.css](styles.components.css), and [styles.parallax.css](styles.parallax.css). Progressive enhancement JavaScript runs via [script.js](script.js) for parallax, selectable personas, and mobile menu toggle; pages remain fully usable without JS.
 
 ## Major Mobile Navigation Implementation (2025-09-01)
