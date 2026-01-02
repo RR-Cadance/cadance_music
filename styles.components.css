@@ -39,6 +39,17 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Home: “Essential Benefits” should be a stable 2×2 grid on desktop (avoid 3+1 wrap) */
+@media (min-width: 1024px) {
+  #features .features-grid {
+    grid-template-columns: repeat(2, minmax(22rem, 1fr));
+    max-width: 72rem; /* wider cards for a cleaner 2×2 presentation */
+    gap: var(--space-2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .feature-card {
   background: var(--surface);
   border: 1px solid rgba(255,255,255,0.06);
