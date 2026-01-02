@@ -11,6 +11,7 @@
   --header-h: 56px;
   /* Type scale */
   /* Slightly larger “small” text for readability (esp. around CTAs) */
+  --step--2: clamp(0.70rem, 0.7rem + 0.2vw, 0.8rem);
   --step--1: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
   --step-0: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
   --step-1: clamp(1.25rem, 1.1rem + 1vw, 1.5rem);

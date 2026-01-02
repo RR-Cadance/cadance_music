@@ -255,6 +255,12 @@
   font-style: normal;
   font-size: var(--step--1);
 }
+.testimonial-card bio {
+  display: block;
+  color: var(--muted);
+  font-style: italic;
+  font-size: var(--step--2);
+}
 
 /* Testimonial star ratings */
 .testimonial-card .rating {
@@ -1098,11 +1104,96 @@
 }
 
 /* Reddit landing: center section headings, but keep body text readable */
+.reddit-landing #testimonials h2,
 .reddit-landing #social-proof h2,
 .reddit-landing #see-it h2,
+.reddit-landing #plans h2,
 .reddit-landing #pricing-preview h2,
 .reddit-landing #faq h2 {
   text-align: center;
+}
+
+/* Reddit landing: tighter vertical rhythm (reduce whitespace between sections) */
+.reddit-landing .section {
+  padding-block: var(--space-2);
+}
+
+@media (min-width: 600px) {
+  .reddit-landing .section {
+    padding-block: var(--space-3);
+  }
+}
+
+/* Reddit landing: extra-tight “See it in action” section */
+.reddit-landing #see-it.section {
+  padding-block: var(--space-1);
+}
+
+/* BarreNotes landing: extra-tight “See Cadance in action” section */
+.barrenotes-landing #see-it.section {
+  padding-block: var(--space-1);
+}
+
+@media (min-width: 600px) {
+  .reddit-landing #see-it.section {
+    padding-block: var(--space-2);
+  }
+
+  .barrenotes-landing #see-it.section {
+    padding-block: var(--space-2);
+  }
+}
+
+.reddit-landing #see-it .subhead {
+  margin-bottom: var(--space-1);
+}
+
+.barrenotes-landing #see-it .subhead {
+  margin-bottom: var(--space-1);
+}
+
+.reddit-landing #see-it .demo-video {
+  margin-top: var(--space-1);
+}
+
+.barrenotes-landing #see-it .demo-video {
+  margin-top: var(--space-1);
+}
+
+.reddit-landing #see-it .demo-links {
+  margin-top: var(--space-1);
+}
+
+.barrenotes-landing #see-it .demo-links {
+  margin-top: var(--space-1);
+}
+
+/* Reddit landing: center the single plan card as a block */
+.reddit-landing #plans .features-grid {
+  /* Force a single column so the one visible card expands (no “reserved” space). */
+  grid-template-columns: 1fr;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reddit landing: center content inside the plan card */
+.reddit-landing #plans .pricing-tier {
+  text-align: center;
+}
+
+.reddit-landing #plans .pricing-tier__head {
+  justify-content: center;
+}
+
+.reddit-landing #plans .pricing-tier__head h3 {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.reddit-landing #plans .pricing-tier__perks {
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 /* Landing pages: center section subheads for “See it in action” + pricing */
@@ -1119,9 +1210,36 @@
 /* BarreNotes landing: center key section headings, but keep body text readable */
 .barrenotes-landing #what-is-new h2,
 .barrenotes-landing #see-it h2,
+.barrenotes-landing #plans h2,
 .barrenotes-landing #pricing-preview h2,
 .barrenotes-landing #name h2 {
   text-align: center;
+}
+
+/* BarreNotes landing: single, centered pricing card (optimal width + centered content) */
+.barrenotes-landing #plans .features-grid {
+  grid-template-columns: 1fr;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.barrenotes-landing #plans .pricing-tier {
+  text-align: center;
+}
+
+.barrenotes-landing #plans .pricing-tier__head {
+  justify-content: center;
+}
+
+.barrenotes-landing #plans .pricing-tier__head h3 {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.barrenotes-landing #plans .pricing-tier__perks {
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 .barrenotes-landing #name .subhead {
@@ -1153,20 +1271,23 @@
 
 /* Reddit landing: keep the testimonial cards centered as a block */
 .reddit-landing .reddit-testimonials-grid {
-  max-width: 72rem;
+  max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center; /* center fixed-width columns when there's extra space */
 }
 
 @media (min-width: 600px) {
   .reddit-landing .reddit-testimonials-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Keep the 2 cards centered instead of stretching edge-to-edge */
+    grid-template-columns: repeat(2, minmax(0, 26rem));
   }
 }
 
 @media (min-width: 900px) {
   .reddit-landing .reddit-testimonials-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Keep testimonials visually centered on desktop (page only has 2 cards). */
+    grid-template-columns: repeat(2, minmax(0, 26rem));
   }
 }
 
@@ -1451,7 +1572,7 @@ a.secondary-cta:focus-visible {
   max-width: 520px;
   height: auto;
   border-radius: 12px;
-  margin: var(--space-3) auto 0;
+  margin: var(--space-2) auto 0;
   background: #000;
   box-shadow: var(--shadow-2);
 }
