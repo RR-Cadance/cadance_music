@@ -40,15 +40,62 @@
   }
 }
 
-/* Home: “Essential Benefits” should be a stable 2×2 grid on desktop (avoid 3+1 wrap) */
+/* Home: “Essential Benefits” is strictly 2×2 (>=600px) → 4×1 on mobile.
+   Also adds left-edge, vertically-centered icons inside each card. */
+#features {
+  /* Icons here should be larger than elsewhere on the site (cards are long). */
+  --essential-benefit-icon-size: 44px;
+  --essential-benefit-icon-size-turtle: 54px;
+}
+
+#features .features-grid {
+  grid-template-columns: 1fr; /* mobile: 4×1 */
+  gap: var(--space-2);
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 600px) {
+  #features {
+    --essential-benefit-icon-size: 56px;
+    --essential-benefit-icon-size-turtle: 70px;
+  }
+
+  #features .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* stable 2×2 */
+  }
+}
+
 @media (min-width: 1024px) {
   #features .features-grid {
     grid-template-columns: repeat(2, minmax(22rem, 1fr));
-    max-width: 72rem; /* wider cards for a cleaner 2×2 presentation */
-    gap: var(--space-2);
-    margin-left: auto;
-    margin-right: auto;
   }
+}
+
+#features .feature-card--essential-benefit {
+  position: relative;
+  padding-left: calc(var(--space-3) + var(--essential-benefit-icon-size) + var(--space-3));
+}
+
+#features .essential-benefit-icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: var(--essential-benefit-icon-size);
+  height: var(--essential-benefit-icon-size);
+
+  color: var(--brand);
+  opacity: 0.95;
+  flex: none;
+}
+
+/* Turtle glyph has a wider, lower silhouette than the others; scale it up for balance. */
+#features .essential-benefit-icon--turtle {
+  width: var(--essential-benefit-icon-size-turtle);
+  height: var(--essential-benefit-icon-size-turtle);
 }
 .feature-card {
   background: var(--surface);
@@ -1113,17 +1160,10 @@
   margin: var(--space-3) 0 0;
   padding: 0;
   display: grid;
-  /* Force a clean 2×2 grid on typical tablet widths so a single card
-     doesn't wrap onto a third row and fall below the fold. */
+  /* Keep these benefit tiles in a stable 2×2 grid across tablet + desktop.
+     (Avoid the 1×4 desktop layout, which makes each card too narrow.) */
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-1);
-}
-
-@media (min-width: 900px) {
-  .reddit-landing .icon-benefits,
-  .barrenotes-landing .icon-benefits {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
 .reddit-landing .icon-benefits li,
@@ -1153,18 +1193,8 @@
   height: 48px;
 }
 
-/* Landing benefit tiles:
-   - 2×2 mode (default): icon stays left of the text (row layout)
-   - 1×4 mode (>=900px): icon stacks above the text for a cleaner narrow-card layout
-*/
 @media (min-width: 900px) {
-  .reddit-landing .icon-benefits li,
-  .barrenotes-landing .icon-benefits li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-1);
-  }
-
+  /* On larger screens, scale the icons up a bit while keeping the 2×2 layout. */
   .reddit-landing .icon-benefits .benefit-icon,
   .barrenotes-landing .icon-benefits .benefit-icon {
     width: 44px;
@@ -1776,18 +1806,18 @@ a.secondary-cta:focus-visible {
 
 /* Pricing page: match landing-page sophistication */
 .pricing-page #plans .pricing-tier {
-  text-align: center;
+  text-align: left;
 }
 
 .reddit-landing #plans .pricing-tier,
 .barrenotes-landing #plans .pricing-tier {
-  text-align: center;
+  text-align: left;
 }
 
-/* Keep the tier head simple: centered title; pills are pinned separately when present. */
+/* Keep the tier head simple: left-aligned title; pills are pinned separately when present. */
 .pricing-page .pricing-tier__head {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   gap: var(--space-2);
   margin-bottom: var(--space-1);
@@ -1796,7 +1826,7 @@ a.secondary-cta:focus-visible {
 .reddit-landing #plans .pricing-tier__head,
 .barrenotes-landing #plans .pricing-tier__head {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   gap: var(--space-2);
   margin-bottom: var(--space-1);
@@ -1939,36 +1969,46 @@ a.secondary-cta:focus-visible {
 .pricing-page .pricing-tier__desc {
   margin: 0;
   color: var(--muted);
+  text-align: left;
+  line-height: 1.25;
 }
 
 .reddit-landing #plans .pricing-tier__desc,
 .barrenotes-landing #plans .pricing-tier__desc {
   margin: 0;
   color: var(--muted);
+  text-align: left;
+  line-height: 1.25;
 }
 
 .pricing-page .pricing-tier__perks {
-  margin: var(--space-2) 0 0;
-  padding-left: 0;
-  list-style-position: inside;
+  margin: var(--space-1) 0 0;
+  padding-left: 1.15rem;
+  list-style-position: outside;
+  text-align: left;
+  line-height: 1.25;
 }
 
 .reddit-landing #plans .pricing-tier__perks,
 .barrenotes-landing #plans .pricing-tier__perks {
-  margin: var(--space-2) 0 0;
-  padding-left: 0;
-  list-style-position: inside;
+  margin: var(--space-1) 0 0;
+  padding-left: 1.15rem;
+  list-style-position: outside;
+  text-align: left;
+  line-height: 1.25;
 }
 
 .pricing-page .pricing-tier__perks li {
-  margin: 0.5rem 0;
+  margin: 0.35rem 0;
+  line-height: 1.25;
   color: var(--text);
   opacity: 0.9;
 }
 
 .reddit-landing #plans .pricing-tier__perks li,
 .barrenotes-landing #plans .pricing-tier__perks li {
-  margin: 0.5rem 0;
+  margin: 0.35rem 0;
+  line-height: 1.25;
   color: var(--text);
   opacity: 0.9;
 }
