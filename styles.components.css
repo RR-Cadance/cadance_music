@@ -1088,7 +1088,7 @@
   opacity: 0.9;
   font-weight: 600;
   /* CTA note text should be comfortably readable */
-  font-size: var(--step-0);
+  font-size: var(--step--1);
   line-height: 1.35;
   text-wrap: balance;
 }
@@ -1102,7 +1102,7 @@
   opacity: 0.92;
   font-weight: 650;
   /* CTA note text should be comfortably readable */
-  font-size: var(--step-0);
+  font-size: var(--step--1);
   line-height: 1.35;
   text-wrap: balance;
 }
@@ -1511,7 +1511,7 @@
   opacity: 0.92;
   font-weight: 650;
   /* CTA microcopy should be readable (many visitors are 45+) */
-  font-size: var(--step-0);
+  font-size: var(--step--1);
   line-height: 1.35;
   text-wrap: balance;
 }
