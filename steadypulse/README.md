@@ -24,7 +24,7 @@ update that relative link if you flatten the paths).
 ## Before publishing — confirm these stay current
 
 - Contact email: `info@cadance.music` (used in both pages).
-- The "Last updated" date in `privacy.html` (currently 8 August 2026) — bump it
+- The "Last updated" date in `privacy.html` (currently 28 September 2026) — bump it
   whenever the policy changes.
 
 Everything else (no-data-collected stance, Apple optional-tip wording, haptic
