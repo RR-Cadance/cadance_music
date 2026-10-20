@@ -6,8 +6,8 @@ external CSS.
 
 ## Files
 
-- `privacy.html` — Privacy Policy. Required for every app, and specifically for
-  HealthKit (guideline 5.1.3). The app's Settings > About links to it.
+- `privacy.html` — Privacy Policy. Required for every app. The app's Settings >
+  About links to it.
 - `support.html` — Support page with contact + FAQ (required Support URL). The
   app's Settings > About links to it.
 
@@ -27,6 +27,6 @@ These exact URLs are compiled into the app (`CareWebLinks` in
   whenever the policy changes.
 - The policy describes the app's actual data flows (Contacts "Medical" list,
   encrypted private-CloudKit roster sync, opt-in encrypted private-profile sync,
-  read-only HealthKit medications, Apple-processed Family Unlock purchase, no
+  Apple-processed MyCareRoster Unlimited purchase (no HealthKit since build 22), no
   analytics or tracking). Update it whenever those change, together with the app's
   `docs/AppReviewNotes.md` and App Privacy answers.
