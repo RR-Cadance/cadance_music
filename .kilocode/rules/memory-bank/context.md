@@ -1,7 +1,7 @@
 # Current Context: Cadance Marketing Site
 
 ## Current State
-Static, multi-page marketing site (GitHub Pages) with shared design system and progressive enhancement JavaScript. Current public messaging is prepared for Cadance v6, led by Teacher Notebook, Syllabus, flexible passes, and Focus Player.
+Static, multi-page marketing site (GitHub Pages) with shared design system and progressive enhancement JavaScript. Current public messaging is aligned with Cadance 7.5 (refresh 2026-10-24), led by one Search, Notebook, flexible passes, Focus Player, imports, and Apple Watch/Bluetooth remote control.
 
 Primary pages:
 - Teacher homepage: [`index.html`](index.html:1)
@@ -11,7 +11,9 @@ Primary pages:
 - How-to videos: [`how-to.html`](how-to.html:1)
 - Music training resources: [`music-training.html`](music-training.html:1)
 - Partners: [`partners.html`](partners.html:1)
+- Features: [`features.html`](features.html:1)
 - Blog: [`blog/index.html`](blog/index.html:1) with new posts:
+  - [`blog/whats-new-in-cadance-7-5/index.html`](blog/whats-new-in-cadance-7-5/index.html:1)
   - [`blog/whats-new-in-cadance-6/index.html`](blog/whats-new-in-cadance-6/index.html:1)
   - [`blog/teacher-notebook/index.html`](blog/teacher-notebook/index.html:1)
   - [`blog/perfect-practice-passes/index.html`](blog/perfect-practice-passes/index.html:1)
@@ -105,7 +107,17 @@ Private / internal pages (no links in):
 - The 15-second Day Pass gate only applies when a track is outside the user's current entitlement, including DRM-protected tracks attempted with Spark. If the user cancels the banner, Cadance does not prompt again in that session; those uncovered tracks stop at the preview limit until the user manually activates a pass through Settings > Day Passes > Activate a Day Pass Now.
 - Blog chronology records Perfect Practice Passes as a Cadance v5 feature on June 2, 2026, and the Ran Bagno featured artist post as July 11, 2026.
 
+## Cadance 7.5 Alignment (Oct 2026)
+
+Owner decisions (2026-10-24): site matches the published release, 7.5; use "7.5" wording; Metronome removed from all copy (no entry point since 2026-09-02, unlikely to return); "Notebook" (not "Teacher Notebook") in current copy; minimum iOS/iPadOS 16; iPhone Duo and Mac (Designed for iPad) are mentioned; no prices in any blog post; the Spotify missing-album 10-Day-Pass offer stays valid but is NOT promoted; foundingDate 2012.
+- Class Planning Mode is "always free" planning access, never a "free tier". Watch control is a Spark+ benefit (covers whatever the plan plays, incl. an active Day Pass) and an upgrade incentive from Class Planning Mode.
+- Access truth (code, 7.5): Spark = full local non-DRM playback + Delay Start; Artist = Apple Music (streamed or downloaded), Syllabus playback, Focus Player, docked notes; Day Pass = Artist-level for the calendar day; PPP = one track 30 days, 2 swaps. Without an Apple Music subscription, Apple Music tracks play the 30-second preview. Cadance Resources = 70 playlists in 10 folders. Settings path: Settings › Account & Passes.
+- Changes: features.html rewritten (Search, imports, remote control, locks, getting started, tier cards); homepage hero + "New in Cadance 7.5" section; pricing/FAQ/BarreNotes updated (PPP card added to BarreNotes, Mac/iOS 16, refunds/restore, Spotify guide); new post `blog/whats-new-in-cadance-7-5/`; prices removed from the Day Pass and subscription posts; class-planning post updated; blog/privacy nav+footer normalized (Clarity added to four compact posts that lacked it); privacy meta no longer claims "no analytics"; `tempo-notes.html` deleted (replaced by music-training); `plans/` moved out of the repo to `../website-plans/`; sitemap rebuilt (features + all posts, no /reddit/ redirect).
+- Historical posts (Cadance 4, v6, Extraordinary Groups) keep period facts such as "33 curated playlists".
+- Smart App Banner (`<meta name="apple-itunes-app" content="app-id=6748429968">`) is on all 25 public Cadance pages (not redirects, BarreNotesPosts, forms/request-art, steadypulse, mycareroster). Mac (Designed for iPad, Apple silicon) is stated in the homepage hero note, the homepage SoftwareApplication data, the Features devices card, the FAQ ("Can I use Cadance on a Mac?"), and the BarreNotes availability label.
+
 ## Next Steps
+- **7.5 screenshots placed (2026-10-24).** Owner sources live in iCloud `cadance shared/website content` (iPad Stage Manager window captures, iPhone Duo mock-up, Watch 46 mm captures). Converted with `cwebp -q 80` to `cadance-v7-*.webp` (≤1100 px wide, 1600 for Duo) and placed on features.html (Search pair, Focus Player, Watch trio, Remote Assist, 3-step import + paused banner, Visual Tour + Duo), the homepage "New in 7.5" (Duo) and the 7.5 blog post. New CSS modifiers in styles.components.css: `.product-showcase--narrow/--pair/--trio/--steps/--watch`. Unused source: `en-US-4-Watch.png` (App Store composite with marketing text). Notebook/Syllabus still use the v6 WebPs. How-to videos still need replacing (owner wants these and more).
 - Capture/finalize App Store preview videos and release-date wording before publishing the external announcement.
 - The app can link users to `/forms/request-art/` for the Rinat Zaripov dance-art note request. The route is now backed by a live Cloudflare Worker (`worker/`, `cadance-art-request`) that captures requests to KV and emails two `.cadnote` files. See "Request-art fulfilment (Aug 2026)" below for status and remaining setup.
 

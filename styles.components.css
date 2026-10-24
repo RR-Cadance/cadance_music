@@ -334,11 +334,53 @@
   text-align: center;
 }
 
+.product-showcase--narrow {
+  max-width: 34rem;
+}
+
+.product-showcase--pair {
+  max-width: 64rem;
+}
+
+.product-showcase--trio {
+  max-width: 48rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Watch screens stay close to real Watch size (416 px captures at 2x ≈ 13rem),
+   so they read as Watch screens instead of stretching with the layout. */
+.product-showcase--watch {
+  grid-template-columns: repeat(3, minmax(0, 13rem));
+  justify-content: center;
+  max-width: none;
+}
+
+.product-showcase--watch img {
+  max-width: 13rem;
+  margin-inline: auto;
+  border-radius: 12%;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
 @media (min-width: 600px) {
   .product-showcase--notebook {
     grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 0.75fr));
     align-items: start;
   }
+
+  .product-showcase--pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .product-showcase--steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.product-showcase--steps {
+  max-width: 72rem;
 }
 
 /* Contact notes */

@@ -13,13 +13,13 @@ A fast, static, mobile‑first site for the Cadance app.
   - `publishers/index.html` (musicians / rights‑holder permissions page)
   - `publishers.html` (stub redirect to `/publishers/`)
   - `pricing/index.html` (pricing & plans)
-  - `reddit/index.html` (campaign landing)
+  - `reddit/index.html` (redirect to `/barrenotes/`)
+  - `features.html` (full feature reference for the current app, Cadance 7.5)
   - `barrenotes/index.html` (BarreNotes → Cadance landing)
   - `how-to.html` (how-to videos)
   - `music-training.html` (music training resources)
   - `partners.html` (partners)
-  - `blog/index.html` (blog index, including Cadance v6, Teacher Notebook, Perfect Practice Pass, and Ran Bagno posts)
-  - `tempo-notes.html` (Tempo Notes resources and feature guides)
+  - `blog/index.html` (blog index, including the Cadance 7.5, Cadance v6, Notebook, Perfect Practice Pass, and Ran Bagno posts)
   - `faq.html` (FAQ)
   - `privacy.html` (privacy)
 - Styles: Split CSS:
@@ -31,9 +31,12 @@ A fast, static, mobile‑first site for the Cadance app.
 - Assets: screenshots and brand images in repo root
   - `cadance_Icon.png` (favicon 32×32)
   - `cadance_word_d.svg` (brand wordmark)
-  - `cadance-v6-*.webp` (optimized Teacher Notebook and Syllabus screenshots)
+  - `cadance-v6-*.webp` (optimized Notebook and Syllabus screenshots)
+  - `cadance-v7-*.webp` (Cadance 7.5 screenshots: Search, Focus Player, imports, Visual Tour, iPad Remote Assist, Apple Watch, iPhone Duo; sources in iCloud `cadance shared/website content`)
   - App images: `iPhoneLockScreen.png`, `iPhoneFav.png`, `iPhoneDetails.png`, `iPhoneDetails2.png`, `iPadVerticalLibrary.png`
 - GitHub Pages: `CNAME`, `.nojekyll`
+- App-read content feeds (do not delete or edit casually; installed app versions fetch them): `v2/`, `v3/`, `v6/promotions.json`, root `information_panels.json` and `playlist_resources.json`
+- Internal planning documents live outside this repo (`../website-plans/`) so GitHub Pages doesn't publish them
 
 ## Local Development
 
@@ -87,10 +90,6 @@ Per‑page meta in each HTML head (Open Graph + Twitter).
   - Title: Feature your album in Cadance — Product photography and store listings
   - Description: Transparent, controlled, revocable permissions. Proper credit.
   - OG/Twitter image: `iPhoneLockScreen.png`
-- Tempo Notes (`tempo-notes.html`)
-  - Title: Cadance Tempo Notes — Music resources and feature guides
-  - Description: Curated music education resources and Cadance feature notes.
-  - OG/Twitter image: `cadance_hero_33.webp`
 
 ## CTAs and Contacts
 

@@ -13,7 +13,6 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 ├── how-to.html                # How-to video demos
 ├── music-training.html        # Music training resources
 ├── partners.html              # Partners page
-├── tempo-notes.html           # Tempo Notes: resources and Cadance features guide
 ├── pricing/
 │   └── index.html             # Pricing & plans (subscription tiers + FAQs)
 ├── reddit/
@@ -103,7 +102,8 @@ Header (sticky)
 
 Home (index.html)
 ├── Hero (headline, subhead, CTA)
-├── Cadance v6 workflow (Teacher Notebook, linked music, Focus Player screenshot)
+├── New in Cadance 7.5 (Search, simpler start, imports, remote control)
+├── Notebook workflow (linked music, Focus Player screenshot)
 ├── Features grid (cards)
 ├── Personas grid (who it’s for)
 ├── Interludes (parallax panels)
@@ -124,12 +124,6 @@ Pricing (pricing/index.html)
 ├── Access options (Day Passes, Perfect Practice Passes, Spark, Artist)
 ├── Clarifying boxes (all-features-included + business expense note)
 └── Access FAQ + App Store CTA (no displayed monetary amounts)
-
-Tempo Notes (tempo-notes.html)
-├── Hero (parallax)
-├── Resources (cards, external links)
-├── Interlude hero (cadance_hero_34.webp)
-└── Cadance features guide (cards: Tempo changing demonstration, Importing music, How favorites work, Mastering repeats)
 
 Publishers (publishers/index.html)
 ├── Hero (CTA)

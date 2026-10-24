@@ -106,7 +106,6 @@
 - pricing/index.html — Pricing & plans
 - blog/index.html — Blog index
 - blog/why-cadance-is-a-subscription/index.html — Subscription narrative
-- tempo-notes.html — Music resources and Cadance features guide (includes interlude hero cadance_hero_34.webp)
 - publishers/index.html — Rights-holder permissions
 - publishers.html — Meta-refresh redirect to /publishers/
 - privacy.html — Privacy policy
