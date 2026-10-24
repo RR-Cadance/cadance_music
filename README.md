@@ -37,6 +37,7 @@ A fast, static, mobile‑first site for the Cadance app.
 - GitHub Pages: `CNAME`, `.nojekyll`
 - App-read content feeds (do not delete or edit casually; installed app versions fetch them): `v2/`, `v3/`, `v6/promotions.json`, root `information_panels.json` and `playlist_resources.json`
 - Internal planning documents live outside this repo (`../website-plans/`) so GitHub Pages doesn't publish them
+- Spare social images set aside for future use: `../website-assets/og-spare/` (not published)
 
 ## Local Development
 
@@ -131,7 +132,7 @@ Pushing to `main` updates the live site after GitHub Pages rebuilds.
 - Meta/OG/Twitter present and correct per page; favicons resolve
 - No external font/network requests
 - All mailto links open with correct address and subject
-- Cross‑links: header/footer links work among Home, White Label, and Publishers
+- Cross‑links: header/footer links work across all public pages
 
 ## Troubleshooting
 

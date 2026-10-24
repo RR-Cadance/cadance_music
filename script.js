@@ -148,8 +148,6 @@ function initSelectablePersonas() {
         });
       });
 
-      const cta = document.getElementById('needs-cta');
-
       function getSelected() {
         return items
           .filter(li => li.getAttribute('aria-checked') === 'true')
@@ -167,18 +165,8 @@ function initSelectablePersonas() {
         }
       }
 
-      function updateCTA(selected) {
-        if (!cta) return;
-        // Primary CTA remains the App Store; this secondary CTA routes to a guided interview.
-        cta.setAttribute('href', 'https://heyjuno.co/chat/vau4ae');
-        cta.setAttribute('target', '_blank');
-        cta.setAttribute('rel', 'noopener');
-      }
-
       function updateUI() {
-        const selected = getSelected();
-        updateHeader(selected.length);
-        updateCTA(selected);
+        updateHeader(getSelected().length);
       }
 
       // Initialize UI
