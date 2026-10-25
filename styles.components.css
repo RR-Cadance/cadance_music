@@ -1239,6 +1239,31 @@
 }
 
 
+/* 3:2 How To videos (7.5): a smaller play button keeps the poster title readable in narrow cards */
+.video-container--wide::before {
+  width: 48px;
+  height: 48px;
+}
+
+.video-container--wide::after {
+  border-left: 22px solid #4FD1C5;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+}
+
+@media (max-width: 599px) {
+  .video-container--wide::before {
+    width: 64px;
+    height: 64px;
+  }
+
+  .video-container--wide::after {
+    border-left: 30px solid #4FD1C5;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+  }
+}
+
 /* Video duration badge */
 .video-duration {
   position: absolute;

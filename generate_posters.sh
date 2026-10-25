@@ -12,7 +12,6 @@ mkdir -p videos
 videos=(
     "Library_Artist_View_demo"
     "Play_Track_demo" 
-    "Tempo_demo"
     "Repeat_demo"
     "Start_Delay_demo"
     "Duck_demo"
