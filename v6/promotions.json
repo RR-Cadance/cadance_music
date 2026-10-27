@@ -1,52 +1,6 @@
 {
   "promotions" : [
     {
-      "addedAt" : "2026-09-08T07:00:00Z",
-      "badge" : {
-        "background" : "yellow",
-        "fontScale" : 2,
-        "fontWeight" : "bold",
-        "foreground" : "black",
-        "rotationDegrees" : -3,
-        "text" : "New!"
-      },
-      "body" : "## Cadance 7\nOne search for your library and Apple Music, plus an all-new Visual Tour.\n\n- **Search**: the magnifier in the header finds your media, Syllabus, playlists, and Apple Music together\n- **Visual Tour**: rebuilt for Cadance 7 with Quick Start, Passes and Modes, and Troubleshooting\n- **Account & Passes**: subscription, Day Passes, Practice Passes, and purchase history in one Settings section\n\nOpen the Visual Tour in Favorites for a guided walkthrough. Not on Cadance 7 yet? Update in the App Store.",
-      "id" : "version7-intro",
-      "presentation" : {
-        "maxImpressions" : 3,
-        "priority" : 100
-      },
-      "type" : "message",
-      "window" : {
-        "duration" : 8,
-        "kind" : "relativeFromFirstSeen",
-        "offset" : 0
-      }
-    },
-    {
-      "addedAt" : "2026-08-26T01:00:00Z",
-      "badge" : {
-        "background" : "red",
-        "fontScale" : 2.1,
-        "fontWeight" : "heavy",
-        "foreground" : "white",
-        "rotationDegrees" : 3,
-        "text" : "Big Update"
-      },
-      "body" : "## Save 33% - Full access\nPasses cost up to **33%** less, and Artist subscribers now have full access.\n\nDay Passes and Practice Passes now offer savings of up to 33%.\n\nEvery Artist subscriber has full access to features and Apple Music for the price you already pay. The Patron tier has been retired.\n\nNothing to do. Your expanded access is already active.",
-      "id" : "more-access-save-up-to-33",
-      "presentation" : {
-        "maxImpressions" : 3,
-        "priority" : 90
-      },
-      "type" : "message",
-      "window" : {
-        "duration" : 8,
-        "kind" : "relativeFromFirstSeen",
-        "offset" : 0
-      }
-    },
-    {
       "addedAt" : "2026-08-19T07:00:00Z",
       "badge" : {
         "background" : "yellow",
@@ -79,21 +33,21 @@
         "rotationDegrees" : -2,
         "text" : "How To"
       },
-      "body" : "## Teach with a Day Pass\nFull access until midnight on the days you teach. Day Passes never expire.\n\nIn Class Planning mode, every track starts with a 15-second planning preview. When it is time to teach, activate a Day Pass for full access until midnight.\n\nActivate a Day Pass from Settings > Day Passes while Preview Mode is active, or from an eligible track's action menu. Day Passes never expire, so you use them only on the days you teach.",
+      "body" : "## Teach with a Day Pass\nOne pass gives full access until midnight. Passes never expire.\n\nWithout a subscription, Cadance is in Class Planning mode: every track plays a 15-second preview, so you can plan a class without using a pass.\n\nWhen a track plays past 15 seconds and you have a Day Pass, Cadance counts down 10 seconds, then starts your teaching day. Tap **Don't use a pass** to keep planning instead.\n\nWhen the countdown no longer appears, leave Class Planning mode by tapping **Activate a Day Pass Now** under Day Passes in Settings.",
       "id" : "day-pass-explained-v6",
       "presentation" : {
         "maxImpressions" : 3,
-        "priority" : 3
+        "priority" : 5
       },
       "type" : "message",
       "window" : {
         "duration" : 8,
         "kind" : "relativeFromFirstSeen",
-        "offset" : 1
+        "offset" : 0
       }
     }
   ],
-  "revision" : 5,
+  "revision" : 6,
   "schemaVersion" : 6,
   "ttlSeconds" : 3600
 }
