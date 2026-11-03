@@ -1,32 +1,19 @@
-# MyCareRoster hosted pages (App Store metadata)
+# MyCareRoster redirect pages
 
-Two static, self-contained pages for the App Store Connect required URL fields,
-styled to match MyCareRoster's navy and teal theme. No build step, no assets, no
-external CSS.
+MyCareRoster's privacy and support pages now live on its own site,
+https://mycareroster.com (repo `RR-Cadance/MyCareRoster.com`).
 
-## Files
+The two files here only redirect there:
 
-- `privacy.html` — Privacy Policy. Required for every app. The app's Settings >
-  About links to it.
-- `support.html` — Support page with contact + FAQ (required Support URL). The
-  app's Settings > About links to it.
+| Old URL (in shipped apps and App Store Connect) | Redirects to |
+|---|---|
+| `https://cadance.music/mycareroster/privacy` (`privacy.html`) | `https://mycareroster.com/privacy/` |
+| `https://cadance.music/mycareroster/support` (`support.html`) | `https://mycareroster.com/support/` |
 
-## URLs
+Keep both files, and don't rename them: MyCareRoster 1.0 compiles these URLs into the
+app (`CareWebLinks` in `MyCareRosterApp/SettingsView.swift`), so installed copies keep
+opening them even after the app and App Store Connect are updated.
 
-- Privacy Policy URL: `https://cadance.music/mycareroster/privacy`
-- Support URL:        `https://cadance.music/mycareroster/support`
-
-These exact URLs are compiled into the app (`CareWebLinks` in
-`MyCareRosterApp/SettingsView.swift`), so don't move or rename the files.
-`support.html` links to `./privacy.html`, so keep both pages in this directory.
-
-## Keep current
-
-- Contact email: `info@cadance.music` (used in both pages).
-- The "Last updated" date in `privacy.html` (currently 16 October 2026) — bump it
-  whenever the policy changes.
-- The policy describes the app's actual data flows (Contacts "Medical" list,
-  encrypted private-CloudKit roster sync, opt-in encrypted private-profile sync,
-  Apple-processed MyCareRoster Unlimited purchase (no HealthKit since build 22), no
-  analytics or tracking). Update it whenever those change, together with the app's
-  `docs/AppReviewNotes.md` and App Privacy answers.
+GitHub Pages can't send server redirects, so each page uses a meta refresh, a canonical
+link, a one-line `location.replace` script, and a visible link as a fallback. Edit the
+policy and support content in the MyCareRoster.com repo, not here.
