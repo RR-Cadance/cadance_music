@@ -43,6 +43,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://cadance.music/blog/whats-new-in-cadance-7-6/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://cadance.music/blog/whats-new-in-cadance-7-5/</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>

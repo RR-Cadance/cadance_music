@@ -23,6 +23,8 @@ Static multi-page website with no backend dependencies, optimized for GitHub Pag
 │       └── index.html         # Private: BarreNotes social proof screenshots gallery
 ├── blog/
 │   ├── index.html             # Blog index
+│   ├── whats-new-in-cadance-7-6/
+│   ├── whats-new-in-cadance-7-5/
 │   ├── whats-new-in-cadance-6/
 │   ├── teacher-notebook/
 │   ├── perfect-practice-passes/
@@ -102,7 +104,7 @@ Header (sticky)
 
 Home (index.html)
 ├── Hero (headline, subhead, CTA)
-├── New in Cadance 7.5 (Search, simpler start, imports, remote control)
+├── New in Cadance 7.6 (straight to your music + Open Cadance On, Search, imports, remote control)
 ├── Notebook workflow (linked music, Focus Player screenshot)
 ├── Features grid (cards)
 ├── Personas grid (who it’s for)
